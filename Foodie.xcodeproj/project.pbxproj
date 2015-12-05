@@ -18,6 +18,8 @@
 		5D03835C1C1394EB009D4FF0 /* RestaurantInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03835B1C1394EB009D4FF0 /* RestaurantInfoTableViewController.swift */; };
 		5D03835E1C139557009D4FF0 /* ProfileImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03835D1C139557009D4FF0 /* ProfileImageTableViewCell.swift */; };
 		5D0383601C1398BA009D4FF0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03835F1C1398BA009D4FF0 /* WebViewController.swift */; };
+		5D0383621C139C38009D4FF0 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383611C139C38009D4FF0 /* ImageCollectionViewController.swift */; };
+		5D0383641C139CB3009D4FF0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383631C139CB3009D4FF0 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		5D03835B1C1394EB009D4FF0 /* RestaurantInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoTableViewController.swift; sourceTree = "<group>"; };
 		5D03835D1C139557009D4FF0 /* ProfileImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageTableViewCell.swift; sourceTree = "<group>"; };
 		5D03835F1C1398BA009D4FF0 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		5D0383611C139C38009D4FF0 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
+		5D0383631C139CB3009D4FF0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				5D0383591C138DCA009D4FF0 /* RestaurantTableViewCell.swift */,
 				5D0383571C138D8C009D4FF0 /* Restaurant.swift */,
 				5D0383421C138A8A009D4FF0 /* Main.storyboard */,
+				5D0383631C139CB3009D4FF0 /* ImageCollectionViewCell.swift */,
+				5D0383611C139C38009D4FF0 /* ImageCollectionViewController.swift */,
 				5D03835F1C1398BA009D4FF0 /* WebViewController.swift */,
 				5D0383531C138B1A009D4FF0 /* Supporting Files */,
 				5D0383541C138B37009D4FF0 /* Core Data */,
@@ -176,6 +182,8 @@
 				5D0383581C138D8C009D4FF0 /* Restaurant.swift in Sources */,
 				5D0383471C138A8A009D4FF0 /* Foodie.xcdatamodeld in Sources */,
 				5D0383561C138D43009D4FF0 /* RestaurantsTableViewController.swift in Sources */,
+				5D0383641C139CB3009D4FF0 /* ImageCollectionViewCell.swift in Sources */,
+				5D0383621C139C38009D4FF0 /* ImageCollectionViewController.swift in Sources */,
 				5D03833F1C138A8A009D4FF0 /* AppDelegate.swift in Sources */,
 				5D0383601C1398BA009D4FF0 /* WebViewController.swift in Sources */,
 			);
@@ -327,6 +335,7 @@
 				5D0383521C138A8A009D4FF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

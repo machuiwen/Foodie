@@ -120,10 +120,9 @@ class RestaurantInfoTableViewController: UITableViewController {
             if let urlCell = sender as? UITableViewCell {
                 webvc.urlPath = urlCell.detailTextLabel?.text
             }
+        } else if let imagesvc = destinationvc as? ImageCollectionViewController {
+            imagesvc.imageURLs = (restaurant?.moreImageURLs)!
         }
-//        } else if let imagesvc = destinationvc as? ImageCollectionViewController {
-//            imagesvc.imageURLs = (restaurant?.moreImageURLs)!
-//        }
         //            if let tweetvc = destinationvc as? TweetTableViewController {
         //                if let mention = sender as? UITableViewCell {
         //                    if segue.identifier == "Search User" {
