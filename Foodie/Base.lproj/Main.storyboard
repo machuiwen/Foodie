@@ -224,10 +224,69 @@
                             <outlet property="delegate" destination="wSG-40-M75" id="Tko-Ym-LMv"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="Oc2-4e-ZG5" kind="show" identifier="Show Website" id="bT8-WF-t5H"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UGy-9a-VkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1362" y="-196"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Bmr-lF-ewS">
+            <objects>
+                <viewController id="Oc2-4e-ZG5" customClass="WebViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JKV-Fx-PW5"/>
+                        <viewControllerLayoutGuide type="bottom" id="txx-Db-yi4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hWH-xi-gVg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQW-t3-1vj">
+                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="◀︎" id="9bq-8Y-1e4"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TMG-DH-9wg"/>
+                                    <barButtonItem title="▶︎" id="A3i-7l-2h7"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Vte-ZK-e20"/>
+                                    <barButtonItem systemItem="refresh" id="VcP-iM-2Jb"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="x1T-rb-cN5"/>
+                                    <barButtonItem systemItem="stop" id="euw-bu-svx"/>
+                                </items>
+                            </toolbar>
+                            <searchBar contentMode="redraw" placeholder="Search or enter website name" translatesAutoresizingMaskIntoConstraints="NO" id="RSc-76-tI3">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-Y1-0qT">
+                                <rect key="frame" x="0.0" y="108" width="600" height="399"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FQW-t3-1vj" secondAttribute="trailing" id="Bfu-jW-u81"/>
+                            <constraint firstItem="Fen-Y1-0qT" firstAttribute="leading" secondItem="hWH-xi-gVg" secondAttribute="leading" id="Rf1-5p-pEh"/>
+                            <constraint firstItem="FQW-t3-1vj" firstAttribute="top" secondItem="Fen-Y1-0qT" secondAttribute="bottom" id="Sf3-qb-BkF"/>
+                            <constraint firstItem="FQW-t3-1vj" firstAttribute="leading" secondItem="hWH-xi-gVg" secondAttribute="leading" id="ePu-Yn-VZ3"/>
+                            <constraint firstItem="Fen-Y1-0qT" firstAttribute="top" secondItem="RSc-76-tI3" secondAttribute="bottom" id="eQC-8f-cen"/>
+                            <constraint firstAttribute="trailing" secondItem="Fen-Y1-0qT" secondAttribute="trailing" id="hRQ-kL-zyz"/>
+                            <constraint firstItem="FQW-t3-1vj" firstAttribute="bottom" secondItem="txx-Db-yi4" secondAttribute="top" id="kme-f9-Alq"/>
+                            <constraint firstItem="RSc-76-tI3" firstAttribute="top" secondItem="JKV-Fx-PW5" secondAttribute="bottom" id="pLg-hv-T9Z"/>
+                            <constraint firstAttribute="trailing" secondItem="RSc-76-tI3" secondAttribute="trailing" id="sSd-rk-4bk"/>
+                            <constraint firstItem="RSc-76-tI3" firstAttribute="leading" secondItem="hWH-xi-gVg" secondAttribute="leading" id="zvQ-NL-PJL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="RSc-76-tI3" id="iCo-kx-Xdi"/>
+                        <outlet property="webView" destination="Fen-Y1-0qT" id="p7A-g3-4Br"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xNE-GM-o5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2019" y="-422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OiS-SI-80N">

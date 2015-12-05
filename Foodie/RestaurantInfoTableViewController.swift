@@ -36,7 +36,7 @@ class RestaurantInfoTableViewController: UITableViewController {
                     // call
                     SectionInfo(titleForHeader: nil, cellType: "BasicInfoCell", numberOfRows: 1, segueIdentifier: nil),
                     // map
-                    SectionInfo(titleForHeader: nil, cellType: "BasicInfoCell", numberOfRows: 1, segueIdentifier: "Show Map"),
+                    SectionInfo(titleForHeader: nil, cellType: "BasicInfoCell", numberOfRows: 1, segueIdentifier: nil),
                     SectionInfo(titleForHeader: nil, cellType: "BasicInfoCell", numberOfRows: 1, segueIdentifier: "Show Website"),
                 ]
             } else {
@@ -110,43 +110,44 @@ class RestaurantInfoTableViewController: UITableViewController {
     
     // MARK: - Navigation
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        var destinationvc: UIViewController? = segue.destinationViewController
-//        if let navcon = destinationvc as? UINavigationController {
-//            destinationvc = navcon.visibleViewController
-//        }
-//        destinationvc?.navigationItem.title = restaurant?.name
-//        if let webvc = destinationvc as? WebViewController {
-//            if let urlCell = sender as? UITableViewCell {
-//                webvc.urlPath = urlCell.detailTextLabel?.text
-//            }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var destinationvc: UIViewController? = segue.destinationViewController
+        if let navcon = destinationvc as? UINavigationController {
+            destinationvc = navcon.visibleViewController
+        }
+        destinationvc?.navigationItem.title = restaurant?.name
+        if let webvc = destinationvc as? WebViewController {
+            if let urlCell = sender as? UITableViewCell {
+                webvc.urlPath = urlCell.detailTextLabel?.text
+            }
+        }
 //        } else if let imagesvc = destinationvc as? ImageCollectionViewController {
 //            imagesvc.imageURLs = (restaurant?.moreImageURLs)!
 //        }
-//        //            if let tweetvc = destinationvc as? TweetTableViewController {
-//        //                if let mention = sender as? UITableViewCell {
-//        //                    if segue.identifier == "Search User" {
-//        //                        tweetvc.searchText = mention.textLabel?.text
-//        //                        /*
-//        //                        // HW4 extra credit, introduce confusion in HW5
-//        //                        if let user = mention.textLabel?.text {
-//        //                        tweetvc.searchText = user + " OR " + user.substringFromIndex(user.startIndex.advancedBy(1))
-//        //                        }
-//        //                        */
-//        //                    } else if segue.identifier == "Search Hashtag" {
-//        //                        tweetvc.searchText = mention.textLabel?.text
-//        //                    }
-//        //                }
-//        //            } else if let imagevc = destinationvc as? ImageViewController {
-//        //                if let imageCell = sender as? ImageTableViewCell {
-//        //                    imagevc.image = imageCell.myImage
-//        //                }
-//        //            } else if let webvc = destinationvc as? WebViewController {
-//        //                if let urlCell = sender as? UITableViewCell {
-//        //                    webvc.urlPath = urlCell.textLabel?.text
-//        //                }
-//        //            }
-//    }
+        //            if let tweetvc = destinationvc as? TweetTableViewController {
+        //                if let mention = sender as? UITableViewCell {
+        //                    if segue.identifier == "Search User" {
+        //                        tweetvc.searchText = mention.textLabel?.text
+        //                        /*
+        //                        // HW4 extra credit, introduce confusion in HW5
+        //                        if let user = mention.textLabel?.text {
+        //                        tweetvc.searchText = user + " OR " + user.substringFromIndex(user.startIndex.advancedBy(1))
+        //                        }
+        //                        */
+        //                    } else if segue.identifier == "Search Hashtag" {
+        //                        tweetvc.searchText = mention.textLabel?.text
+        //                    }
+        //                }
+        //            } else if let imagevc = destinationvc as? ImageViewController {
+        //                if let imageCell = sender as? ImageTableViewCell {
+        //                    imagevc.image = imageCell.myImage
+        //                }
+        //            } else if let webvc = destinationvc as? WebViewController {
+        //                if let urlCell = sender as? UITableViewCell {
+        //                    webvc.urlPath = urlCell.textLabel?.text
+        //                }
+        //            }
+    }
     
     //    @IBAction private func goBackToRootView(sender: UIBarButtonItem) {
     //        self.navigationController?.popToRootViewControllerAnimated(true)
