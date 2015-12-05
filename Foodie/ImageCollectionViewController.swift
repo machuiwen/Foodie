@@ -40,11 +40,11 @@ class ImageCollectionViewController: UICollectionViewController {
         if let navcon = destinationvc as? UINavigationController {
             destinationvc = navcon.visibleViewController
         }
-//        if let imagevc = destinationvc as? ImageViewController {
-//            if let imageCell = sender as? ImageCollectionViewCell {
-//                imagevc.image = imageCell.myImage
-//            }
-//        }
+        if let imagevc = destinationvc as? ImageViewController {
+            if let imageCell = sender as? ImageCollectionViewCell {
+                imagevc.image = imageCell.myImage
+            }
+        }
     }
     
     // MARK: UICollectionViewDataSource

@@ -325,6 +325,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="myImageView" destination="aaj-3N-NN1" id="JXL-fK-C9J"/>
+                                    <segue destination="t8h-WR-lf3" kind="show" identifier="Show Image" id="Wc1-70-pKG"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -337,6 +338,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1o6-n9-M0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2019" y="228"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="CCP-Ou-g06">
+            <objects>
+                <viewController id="t8h-WR-lf3" customClass="ImageViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xdK-ru-H87"/>
+                        <viewControllerLayoutGuide type="bottom" id="TzK-mS-zk9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dW0-hG-p3o">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rTb-mC-9GC">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sl-X1-ujd">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Sl-X1-ujd" firstAttribute="top" secondItem="xdK-ru-H87" secondAttribute="bottom" id="3gS-6q-PE0"/>
+                            <constraint firstItem="rTb-mC-9GC" firstAttribute="centerX" secondItem="dW0-hG-p3o" secondAttribute="centerX" id="9gz-q7-Heb"/>
+                            <constraint firstItem="rTb-mC-9GC" firstAttribute="centerY" secondItem="dW0-hG-p3o" secondAttribute="centerY" id="B9A-xy-f0r"/>
+                            <constraint firstItem="TzK-mS-zk9" firstAttribute="top" secondItem="8Sl-X1-ujd" secondAttribute="bottom" id="R55-T6-qff"/>
+                            <constraint firstItem="8Sl-X1-ujd" firstAttribute="leading" secondItem="dW0-hG-p3o" secondAttribute="leading" id="gkq-GD-QeM"/>
+                            <constraint firstAttribute="trailing" secondItem="8Sl-X1-ujd" secondAttribute="trailing" id="jCj-fm-4zh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="8Sl-X1-ujd" id="i1l-Hy-uG6"/>
+                        <outlet property="spinner" destination="rTb-mC-9GC" id="qHE-QA-U6d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HcM-NW-CFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2652" y="228"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OiS-SI-80N">
