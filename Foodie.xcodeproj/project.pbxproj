@@ -56,15 +56,31 @@
 		5D03833D1C138A8A009D4FF0 /* Foodie */ = {
 			isa = PBXGroup;
 			children = (
-				5D03833E1C138A8A009D4FF0 /* AppDelegate.swift */,
 				5D0383401C138A8A009D4FF0 /* ViewController.swift */,
 				5D0383421C138A8A009D4FF0 /* Main.storyboard */,
+				5D0383531C138B1A009D4FF0 /* Supporting Files */,
+				5D0383541C138B37009D4FF0 /* Core Data */,
+			);
+			path = Foodie;
+			sourceTree = "<group>";
+		};
+		5D0383531C138B1A009D4FF0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D03833E1C138A8A009D4FF0 /* AppDelegate.swift */,
 				5D0383481C138A8A009D4FF0 /* Assets.xcassets */,
 				5D03834A1C138A8A009D4FF0 /* LaunchScreen.storyboard */,
 				5D03834D1C138A8A009D4FF0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D0383541C138B37009D4FF0 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
 				5D0383451C138A8A009D4FF0 /* Foodie.xcdatamodeld */,
 			);
-			path = Foodie;
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
