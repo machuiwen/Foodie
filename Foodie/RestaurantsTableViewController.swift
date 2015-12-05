@@ -123,12 +123,12 @@ class RestaurantsTableViewController: UITableViewController {
         if let navcon = destinationvc as? UINavigationController {
             destinationvc = navcon.visibleViewController
         }
-//        if let rivc = destinationvc as? RestaurantInfoTableViewController {
-//            if let cell = sender as? RestaurantTableViewCell {
-//                rivc.navigationItem.title = cell.restaurant?.name
-//                rivc.restaurant = cell.restaurant
-//            }
-//        }
+        if let rivc = destinationvc as? RestaurantInfoTableViewController {
+            if let cell = sender as? RestaurantTableViewCell {
+                rivc.navigationItem.title = cell.restaurant?.name
+                rivc.restaurant = cell.restaurant
+            }
+        }
     }
     
 }
