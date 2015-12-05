@@ -231,7 +231,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UGy-9a-VkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1362" y="-196"/>
+            <point key="canvasLocation" x="1376" y="-196"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="Bmr-lF-ewS">
@@ -287,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNE-GM-o5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2019" y="-422"/>
+            <point key="canvasLocation" x="2071" y="-424"/>
         </scene>
         <!--Image Collection View Controller-->
         <scene sceneID="eGZ-5O-K1v">
@@ -297,22 +297,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1pQ-K6-CpC">
-                            <size key="itemSize" width="156" height="147"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
+                        <collectionViewLayout key="collectionViewLayout" id="vDO-MO-WgQ" customClass="ImageCollectionLayout" customModule="Foodie" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="ASG-UU-KKt" customClass="ImageCollectionViewCell" customModule="Foodie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="156" height="147"/>
+                                <rect key="frame" x="0.0" y="64" width="154" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="156" height="147"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="154" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aaj-3N-NN1">
-                                            <rect key="frame" x="8" y="8" width="140" height="131"/>
+                                            <rect key="frame" x="8" y="8" width="138" height="124"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -323,6 +318,7 @@
                                     <constraint firstItem="aaj-3N-NN1" firstAttribute="top" secondItem="ASG-UU-KKt" secondAttribute="topMargin" id="DuS-cA-kkK"/>
                                     <constraint firstItem="aaj-3N-NN1" firstAttribute="bottom" secondItem="ASG-UU-KKt" secondAttribute="bottomMargin" id="V3f-Nn-LjG"/>
                                 </constraints>
+                                <size key="customSize" width="154" height="140"/>
                                 <connections>
                                     <outlet property="myImageView" destination="aaj-3N-NN1" id="JXL-fK-C9J"/>
                                     <segue destination="t8h-WR-lf3" kind="show" identifier="Show Image" id="Wc1-70-pKG"/>
@@ -337,7 +333,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1o6-n9-M0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2019" y="228"/>
+            <point key="canvasLocation" x="2071" y="228"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="CCP-Ou-g06">
@@ -376,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HcM-NW-CFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2652" y="228"/>
+            <point key="canvasLocation" x="2774" y="228"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OiS-SI-80N">

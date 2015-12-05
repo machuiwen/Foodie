@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ImageCollectionViewController: UICollectionViewController {
+class ImageCollectionViewController: UICollectionViewController, ImageCollectionLayoutDelegate {
     
     var imageURLs = [NSURL]() {
         didSet {
@@ -28,6 +28,9 @@ class ImageCollectionViewController: UICollectionViewController {
         // Register cell classes
         
         // Do any additional setup after loading the view.
+        if let layout = collectionView?.collectionViewLayout as? ImageCollectionLayout {
+            layout.delegate = self
+        }
     }
     
     // MARK: - Navigation
@@ -67,6 +70,12 @@ class ImageCollectionViewController: UICollectionViewController {
             print(cell.imageURL)
         }
         return cell
+    }
+    
+    func collectionView(collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:NSIndexPath,
+        withWidth width:CGFloat) -> CGFloat {
+            // TODO: Fix the aspect ratio
+            return width / 4.0 * 3.0
     }
     
     // MARK: UICollectionViewDelegate
