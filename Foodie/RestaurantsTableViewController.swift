@@ -50,6 +50,7 @@ class RestaurantsTableViewController: UITableViewController {
                 type: "Korean",
                 description: "Very hot!!",
                 imageURL: "https://lh5.googleusercontent.com/-coA3W-VOtGw/UhgHZBiMDwI/AAAAAAAAJDY/dBfDpKzytao/s408-k-no/",
+                address: "4127 El Camino Real, Palo Alto, CA 94306",
                 phone: 6507960930,
                 website: "https://www.google.com"
             )

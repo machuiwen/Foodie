@@ -194,21 +194,43 @@
                                     <outlet property="restaurantTypeLabel" destination="G3w-P6-YLn" id="Z4Q-Yy-ldy"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BasicInfoCell" textLabel="eEd-8S-v2M" detailTextLabel="fpq-Ok-gv3" style="IBUITableViewCellStyleSubtitle" id="zLp-ct-WnH">
-                                <rect key="frame" x="0.0" y="310" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MapviewCell" rowHeight="150" id="zLp-ct-WnH" customClass="MapTableViewCell" customModule="Foodie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="310" width="600" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zLp-ct-WnH" id="IWR-yR-VRl">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XkQ-tv-kpX">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
+                                        </mapView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="XkQ-tv-kpX" secondAttribute="bottom" id="V0Y-Sh-8Jv"/>
+                                        <constraint firstItem="XkQ-tv-kpX" firstAttribute="leading" secondItem="IWR-yR-VRl" secondAttribute="leading" id="XWw-M7-ym3"/>
+                                        <constraint firstAttribute="trailing" secondItem="XkQ-tv-kpX" secondAttribute="trailing" id="nBz-eX-bb1"/>
+                                        <constraint firstItem="XkQ-tv-kpX" firstAttribute="top" secondItem="IWR-yR-VRl" secondAttribute="top" id="vG3-OX-DtL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="mapView" destination="XkQ-tv-kpX" id="a5W-hQ-ap6"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BasicInfoCell" textLabel="EiX-HQ-fBw" detailTextLabel="VRi-09-9c8" style="IBUITableViewCellStyleSubtitle" id="zbo-K2-Cgw">
+                                <rect key="frame" x="0.0" y="460" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zbo-K2-Cgw" id="nKa-Cs-l9P">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eEd-8S-v2M">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EiX-HQ-fBw">
                                             <rect key="frame" x="15" y="5" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fpq-Ok-gv3">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VRi-09-9c8">
                                             <rect key="frame" x="15" y="25" width="41" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -227,6 +249,7 @@
                     <connections>
                         <segue destination="Oc2-4e-ZG5" kind="show" identifier="Show Website" id="bT8-WF-t5H"/>
                         <segue destination="Plh-kN-sNc" kind="show" identifier="Show Images" id="cAp-pQ-tzO"/>
+                        <segue destination="v0F-OI-91O" kind="show" identifier="Show Map" id="uJP-aF-qbe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UGy-9a-VkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -335,6 +358,38 @@
             </objects>
             <point key="canvasLocation" x="2071" y="228"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Y8B-5I-YO7">
+            <objects>
+                <viewController id="v0F-OI-91O" customClass="MapViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wda-0Q-RF2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kox-Vu-Tle"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="shT-a0-Pfr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="miG-qp-0aO">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="miG-qp-0aO" secondAttribute="trailing" id="Gmj-fk-43j"/>
+                            <constraint firstItem="miG-qp-0aO" firstAttribute="leading" secondItem="shT-a0-Pfr" secondAttribute="leading" id="a0W-AP-Ma7"/>
+                            <constraint firstItem="miG-qp-0aO" firstAttribute="bottom" secondItem="Kox-Vu-Tle" secondAttribute="top" id="s28-7w-3IM"/>
+                            <constraint firstItem="miG-qp-0aO" firstAttribute="top" secondItem="wda-0Q-RF2" secondAttribute="bottom" id="zkm-cz-9dw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="miG-qp-0aO" id="fX6-qo-3dv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7CK-RC-JAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2071" y="891"/>
+        </scene>
         <!--Image View Controller-->
         <scene sceneID="CCP-Ou-g06">
             <objects>
@@ -372,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HcM-NW-CFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2774" y="228"/>
+            <point key="canvasLocation" x="2732" y="228"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OiS-SI-80N">

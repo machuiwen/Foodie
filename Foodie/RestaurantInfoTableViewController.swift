@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class RestaurantInfoTableViewController: UITableViewController {
     
@@ -33,6 +34,7 @@ class RestaurantInfoTableViewController: UITableViewController {
                 return [
                     // show image
                     SectionInfo(titleForHeader: nil, cellType: "ProfileImageCell", numberOfRows: 1, segueIdentifier: "Show Images"),
+                    SectionInfo(titleForHeader: nil, cellType: "MapviewCell", numberOfRows: 1, segueIdentifier: "Show Map"),
                     // call
                     SectionInfo(titleForHeader: nil, cellType: "BasicInfoCell", numberOfRows: 1, segueIdentifier: nil),
                     // map
@@ -44,6 +46,8 @@ class RestaurantInfoTableViewController: UITableViewController {
             }
         }
     }
+    
+    private var locationManager = CLLocationManager()
     
     // MARK: - Table view data source
     
@@ -63,12 +67,16 @@ class RestaurantInfoTableViewController: UITableViewController {
                 imageCell.restaurant = restaurant
             }
         case 1:
+            if let mapCell = cell as? MapTableViewCell {
+                mapCell.address = restaurant?.formattedAddress
+            }
+        case 2:
             cell.textLabel?.text = "Phone Number"
             cell.detailTextLabel?.text = restaurant?.phoneNumberStr
-        case 2:
+        case 3:
             cell.textLabel?.text = "Address"
             cell.detailTextLabel?.text = restaurant?.formattedAddress
-        case 3:
+        case 4:
             cell.textLabel?.text = "Website"
             if let url = restaurant?.website {
                 cell.detailTextLabel?.text = "\(url)"
@@ -89,10 +97,16 @@ class RestaurantInfoTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section != 0 || restaurant == nil {
+        if restaurant == nil {
             return UITableViewAutomaticDimension
-        } else {
+        }
+        switch indexPath.section {
+        case 0:
             return tableView.frame.width / CGFloat(4.0/3.0)
+        case 1:
+            return 150.0
+        default:
+            return UITableViewAutomaticDimension
         }
     }
     
@@ -100,9 +114,11 @@ class RestaurantInfoTableViewController: UITableViewController {
         if let segueIdentifier = sections[indexPath.section].segueIdentifier {
             performSegueWithIdentifier(segueIdentifier, sender: tableView.cellForRowAtIndexPath(indexPath))
         } else {
-            if let phone = restaurant?.phoneNumber {
-                if let url = NSURL(string: "tel://\(phone)") {
-                    UIApplication.sharedApplication().openURL(url)
+            if indexPath.section == 2 {
+                if let phone = restaurant?.phoneNumber {
+                    if let url = NSURL(string: "tel://\(phone)") {
+                        UIApplication.sharedApplication().openURL(url)
+                    }
                 }
             }
         }
@@ -157,6 +173,8 @@ class RestaurantInfoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.requestAlwaysAuthorization()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

@@ -22,6 +22,9 @@
 		5D0383641C139CB3009D4FF0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383631C139CB3009D4FF0 /* ImageCollectionViewCell.swift */; };
 		5D0383661C13A665009D4FF0 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383651C13A665009D4FF0 /* ImageViewController.swift */; };
 		5D0383681C13AACF009D4FF0 /* ImageCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383671C13AACF009D4FF0 /* ImageCollectionLayout.swift */; };
+		5D7BD4811C13B508007BBCBD /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BD4801C13B508007BBCBD /* MapTableViewCell.swift */; };
+		5D9BD2A21C13C54C0058C655 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A11C13C54C0058C655 /* MapPin.swift */; };
+		5D9BD2A41C13CDF50058C655 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A31C13CDF50058C655 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		5D0383631C139CB3009D4FF0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D0383651C13A665009D4FF0 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		5D0383671C13AACF009D4FF0 /* ImageCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionLayout.swift; sourceTree = "<group>"; };
+		5D7BD4801C13B508007BBCBD /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
+		5D9BD2A11C13C54C0058C655 /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
+		5D9BD2A31C13CDF50058C655 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,9 @@
 				5D0383591C138DCA009D4FF0 /* RestaurantTableViewCell.swift */,
 				5D0383571C138D8C009D4FF0 /* Restaurant.swift */,
 				5D0383421C138A8A009D4FF0 /* Main.storyboard */,
+				5D9BD2A31C13CDF50058C655 /* MapViewController.swift */,
+				5D7BD4801C13B508007BBCBD /* MapTableViewCell.swift */,
+				5D9BD2A11C13C54C0058C655 /* MapPin.swift */,
 				5D0383651C13A665009D4FF0 /* ImageViewController.swift */,
 				5D0383671C13AACF009D4FF0 /* ImageCollectionLayout.swift */,
 				5D0383631C139CB3009D4FF0 /* ImageCollectionViewCell.swift */,
@@ -184,6 +193,7 @@
 			files = (
 				5D03835C1C1394EB009D4FF0 /* RestaurantInfoTableViewController.swift in Sources */,
 				5D03835A1C138DCA009D4FF0 /* RestaurantTableViewCell.swift in Sources */,
+				5D9BD2A21C13C54C0058C655 /* MapPin.swift in Sources */,
 				5D03835E1C139557009D4FF0 /* ProfileImageTableViewCell.swift in Sources */,
 				5D0383581C138D8C009D4FF0 /* Restaurant.swift in Sources */,
 				5D0383471C138A8A009D4FF0 /* Foodie.xcdatamodeld in Sources */,
@@ -191,8 +201,10 @@
 				5D0383641C139CB3009D4FF0 /* ImageCollectionViewCell.swift in Sources */,
 				5D0383681C13AACF009D4FF0 /* ImageCollectionLayout.swift in Sources */,
 				5D0383621C139C38009D4FF0 /* ImageCollectionViewController.swift in Sources */,
+				5D7BD4811C13B508007BBCBD /* MapTableViewCell.swift in Sources */,
 				5D03833F1C138A8A009D4FF0 /* AppDelegate.swift in Sources */,
 				5D0383661C13A665009D4FF0 /* ImageViewController.swift in Sources */,
+				5D9BD2A41C13CDF50058C655 /* MapViewController.swift in Sources */,
 				5D0383601C1398BA009D4FF0 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
