@@ -25,6 +25,7 @@
 		5D7BD4811C13B508007BBCBD /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BD4801C13B508007BBCBD /* MapTableViewCell.swift */; };
 		5D9BD2A21C13C54C0058C655 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A11C13C54C0058C655 /* MapPin.swift */; };
 		5D9BD2A41C13CDF50058C655 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A31C13CDF50058C655 /* MapViewController.swift */; };
+		5D9BD2A61C1409600058C655 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A51C1409600058C655 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		5D7BD4801C13B508007BBCBD /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		5D9BD2A11C13C54C0058C655 /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		5D9BD2A31C13CDF50058C655 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		5D9BD2A51C1409600058C655 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				5D0383591C138DCA009D4FF0 /* RestaurantTableViewCell.swift */,
 				5D0383571C138D8C009D4FF0 /* Restaurant.swift */,
 				5D0383421C138A8A009D4FF0 /* Main.storyboard */,
+				5D9BD2A51C1409600058C655 /* SignUpViewController.swift */,
 				5D9BD2A31C13CDF50058C655 /* MapViewController.swift */,
 				5D7BD4801C13B508007BBCBD /* MapTableViewCell.swift */,
 				5D9BD2A11C13C54C0058C655 /* MapPin.swift */,
@@ -203,6 +206,7 @@
 				5D0383621C139C38009D4FF0 /* ImageCollectionViewController.swift in Sources */,
 				5D7BD4811C13B508007BBCBD /* MapTableViewCell.swift in Sources */,
 				5D03833F1C138A8A009D4FF0 /* AppDelegate.swift in Sources */,
+				5D9BD2A61C1409600058C655 /* SignUpViewController.swift in Sources */,
 				5D0383661C13A665009D4FF0 /* ImageViewController.swift in Sources */,
 				5D9BD2A41C13CDF50058C655 /* MapViewController.swift in Sources */,
 				5D0383601C1398BA009D4FF0 /* WebViewController.swift in Sources */,
