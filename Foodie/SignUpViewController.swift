@@ -28,7 +28,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBAction func goBack(sender: AnyObject) {
         // hide keyboard
         self.view.endEditing(true)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func signUp(sender: UIButton) {
@@ -52,7 +52,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     UIAlertAction(
                         title: "Continue", style: UIAlertActionStyle.Default) {
                             [weak weakSelf = self] (action) -> Void in
-                            weakSelf?.dismissViewControllerAnimated(true, completion: nil)
+                            weakSelf?.view.endEditing(true)
+                            weakSelf?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
                     }]
                 )
             }

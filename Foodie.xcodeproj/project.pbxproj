@@ -21,6 +21,7 @@
 		5D0383641C139CB3009D4FF0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383631C139CB3009D4FF0 /* ImageCollectionViewCell.swift */; };
 		5D0383661C13A665009D4FF0 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383651C13A665009D4FF0 /* ImageViewController.swift */; };
 		5D0383681C13AACF009D4FF0 /* ImageCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383671C13AACF009D4FF0 /* ImageCollectionLayout.swift */; };
+		5D18D53E1C160A4E00E6D74A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D18D53D1C160A4E00E6D74A /* LogInViewController.swift */; };
 		5D7BD4811C13B508007BBCBD /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BD4801C13B508007BBCBD /* MapTableViewCell.swift */; };
 		5D9BD2A21C13C54C0058C655 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A11C13C54C0058C655 /* MapPin.swift */; };
 		5D9BD2A41C13CDF50058C655 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A31C13CDF50058C655 /* MapViewController.swift */; };
@@ -47,6 +48,7 @@
 		5D0383631C139CB3009D4FF0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D0383651C13A665009D4FF0 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		5D0383671C13AACF009D4FF0 /* ImageCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionLayout.swift; sourceTree = "<group>"; };
+		5D18D53D1C160A4E00E6D74A /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		5D7BD4801C13B508007BBCBD /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		5D9BD2A11C13C54C0058C655 /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		5D9BD2A31C13CDF50058C655 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				5D0383571C138D8C009D4FF0 /* Restaurant.swift */,
 				5D0383421C138A8A009D4FF0 /* Main.storyboard */,
 				5D9BD2A51C1409600058C655 /* SignUpViewController.swift */,
+				5D18D53D1C160A4E00E6D74A /* LogInViewController.swift */,
 				5D9BD2A31C13CDF50058C655 /* MapViewController.swift */,
 				5D7BD4801C13B508007BBCBD /* MapTableViewCell.swift */,
 				5D9BD2A11C13C54C0058C655 /* MapPin.swift */,
@@ -217,6 +220,7 @@
 				5D9BD2AA1C141EEF0058C655 /* User.swift in Sources */,
 				5D0383661C13A665009D4FF0 /* ImageViewController.swift in Sources */,
 				5D9BD2A41C13CDF50058C655 /* MapViewController.swift in Sources */,
+				5D18D53E1C160A4E00E6D74A /* LogInViewController.swift in Sources */,
 				5D0383601C1398BA009D4FF0 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
