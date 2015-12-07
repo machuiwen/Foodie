@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5D03833F1C138A8A009D4FF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03833E1C138A8A009D4FF0 /* AppDelegate.swift */; };
 		5D0383441C138A8A009D4FF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0383421C138A8A009D4FF0 /* Main.storyboard */; };
-		5D0383471C138A8A009D4FF0 /* Foodie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383451C138A8A009D4FF0 /* Foodie.xcdatamodeld */; };
 		5D0383491C138A8A009D4FF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D0383481C138A8A009D4FF0 /* Assets.xcassets */; };
 		5D03834C1C138A8A009D4FF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D03834A1C138A8A009D4FF0 /* LaunchScreen.storyboard */; };
 		5D0383561C138D43009D4FF0 /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383551C138D43009D4FF0 /* RestaurantsTableViewController.swift */; };
@@ -26,13 +25,15 @@
 		5D9BD2A21C13C54C0058C655 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A11C13C54C0058C655 /* MapPin.swift */; };
 		5D9BD2A41C13CDF50058C655 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A31C13CDF50058C655 /* MapViewController.swift */; };
 		5D9BD2A61C1409600058C655 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A51C1409600058C655 /* SignUpViewController.swift */; };
+		5D9BD2A91C141EEF0058C655 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A71C141EEF0058C655 /* User+CoreDataProperties.swift */; };
+		5D9BD2AA1C141EEF0058C655 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A81C141EEF0058C655 /* User.swift */; };
+		5D9BD2AD1C14FC7C0058C655 /* Foodie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2AB1C14FC7C0058C655 /* Foodie.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5D03833B1C138A8A009D4FF0 /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D03833E1C138A8A009D4FF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D0383431C138A8A009D4FF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5D0383461C138A8A009D4FF0 /* Foodie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodie.xcdatamodel; sourceTree = "<group>"; };
 		5D0383481C138A8A009D4FF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D03834B1C138A8A009D4FF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D03834D1C138A8A009D4FF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +51,9 @@
 		5D9BD2A11C13C54C0058C655 /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		5D9BD2A31C13CDF50058C655 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5D9BD2A51C1409600058C655 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5D9BD2A71C141EEF0058C655 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5D9BD2A81C141EEF0058C655 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5D9BD2AC1C14FC7C0058C655 /* Foodie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodie.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +121,9 @@
 		5D0383541C138B37009D4FF0 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				5D0383451C138A8A009D4FF0 /* Foodie.xcdatamodeld */,
+				5D9BD2A71C141EEF0058C655 /* User+CoreDataProperties.swift */,
+				5D9BD2A81C141EEF0058C655 /* User.swift */,
+				5D9BD2AB1C14FC7C0058C655 /* Foodie.xcdatamodeld */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -195,11 +201,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D03835C1C1394EB009D4FF0 /* RestaurantInfoTableViewController.swift in Sources */,
+				5D9BD2AD1C14FC7C0058C655 /* Foodie.xcdatamodeld in Sources */,
 				5D03835A1C138DCA009D4FF0 /* RestaurantTableViewCell.swift in Sources */,
 				5D9BD2A21C13C54C0058C655 /* MapPin.swift in Sources */,
 				5D03835E1C139557009D4FF0 /* ProfileImageTableViewCell.swift in Sources */,
 				5D0383581C138D8C009D4FF0 /* Restaurant.swift in Sources */,
-				5D0383471C138A8A009D4FF0 /* Foodie.xcdatamodeld in Sources */,
 				5D0383561C138D43009D4FF0 /* RestaurantsTableViewController.swift in Sources */,
 				5D0383641C139CB3009D4FF0 /* ImageCollectionViewCell.swift in Sources */,
 				5D0383681C13AACF009D4FF0 /* ImageCollectionLayout.swift in Sources */,
@@ -207,6 +213,8 @@
 				5D7BD4811C13B508007BBCBD /* MapTableViewCell.swift in Sources */,
 				5D03833F1C138A8A009D4FF0 /* AppDelegate.swift in Sources */,
 				5D9BD2A61C1409600058C655 /* SignUpViewController.swift in Sources */,
+				5D9BD2A91C141EEF0058C655 /* User+CoreDataProperties.swift in Sources */,
+				5D9BD2AA1C141EEF0058C655 /* User.swift in Sources */,
 				5D0383661C13A665009D4FF0 /* ImageViewController.swift in Sources */,
 				5D9BD2A41C13CDF50058C655 /* MapViewController.swift in Sources */,
 				5D0383601C1398BA009D4FF0 /* WebViewController.swift in Sources */,
@@ -326,6 +334,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.chuiwenm.Foodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -337,6 +346,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.chuiwenm.Foodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -364,12 +374,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5D0383451C138A8A009D4FF0 /* Foodie.xcdatamodeld */ = {
+		5D9BD2AB1C14FC7C0058C655 /* Foodie.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				5D0383461C138A8A009D4FF0 /* Foodie.xcdatamodel */,
+				5D9BD2AC1C14FC7C0058C655 /* Foodie.xcdatamodel */,
 			);
-			currentVersion = 5D0383461C138A8A009D4FF0 /* Foodie.xcdatamodel */;
+			currentVersion = 5D9BD2AC1C14FC7C0058C655 /* Foodie.xcdatamodel */;
 			path = Foodie.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
