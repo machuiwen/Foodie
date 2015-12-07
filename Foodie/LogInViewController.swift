@@ -19,7 +19,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     // MARK: managedObjectContext
     
     var managedObjectContext: NSManagedObjectContext = AppDelegate.managedObjectContext!
-    var defaults = NSUserDefaults.standardUserDefaults()
+    var defaults = Defaults()
     
     // MARK: Actions
     
@@ -33,15 +33,15 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             let users = User.queryUsers(uid, inManagedObjectContext: managedObjectContext)
             if !users.isEmpty {
                 if users[0].password == password.text {
-                    defaults.setValue(uid, forKey: "CurrentUser")
+                    defaults.logInWithUser(uid)
+                    clearContents()
                     performSegueWithIdentifier("Explore App", sender: sender)
                 } else {
                     password.text = ""
                     showAlert("Wrong password", message: "Try again!")
                 }
             } else {
-                userid.text = ""
-                password.text = ""
+                clearContents()
                 showAlert("User not exist", message: "Try again!")
             }
         }
@@ -68,6 +68,11 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                 alert.addAction(action)
             }
             presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    private func clearContents() {
+        userid.text = ""
+        password.text = ""
     }
     
     // MARK: UITextFieldDelegate
