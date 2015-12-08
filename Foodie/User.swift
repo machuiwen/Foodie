@@ -28,4 +28,14 @@ class User: NSManagedObject {
         return users
     }
     
+    // add a Restaurant object to favorites
+    func addRestaurantObject(value: Restaurant) {
+        self.mutableSetValueForKey("favorites").addObject(value)
+    }
+    
+    // remove a Restaurant from favorites
+    func removeRestaurantObject(value: Restaurant) {
+        self.mutableSetValueForKey("favorites").removeObject(value)
+    }
+    
 }

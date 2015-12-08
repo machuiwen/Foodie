@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Sign Up View Controller-->
@@ -403,11 +404,18 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9Sl-du-nVr">
-                        <barButtonItem key="rightBarButtonItem" image="share" id="tNn-IT-3pV">
-                            <connections>
-                                <action selector="share:" destination="wSG-40-M75" id="6uC-y6-huY"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="share" id="tNn-IT-3pV">
+                                <connections>
+                                    <action selector="share:" destination="wSG-40-M75" id="6uC-y6-huY"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="star" id="DVU-c4-qRa">
+                                <connections>
+                                    <action selector="addToFavorite:" destination="wSG-40-M75" id="oT6-l5-5oc"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -1192,6 +1200,7 @@
         <image name="me" width="32" height="32"/>
         <image name="restaurant" width="32" height="32"/>
         <image name="share" width="32" height="32"/>
+        <image name="star" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c63-oB-HNZ"/>

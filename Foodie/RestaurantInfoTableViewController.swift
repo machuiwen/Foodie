@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 class RestaurantInfoTableViewController: UITableViewController {
     
@@ -18,6 +19,7 @@ class RestaurantInfoTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+    var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
     
     // MARK: Private data structure
     
@@ -34,10 +36,10 @@ class RestaurantInfoTableViewController: UITableViewController {
                 return [
                     // show image
                     SectionInfo(titleForHeader: nil, cellType: "ProfileImageCell", numberOfRows: 1, segueIdentifier: "Show Images"),
-                    SectionInfo(titleForHeader: nil, cellType: "MapviewCell", numberOfRows: 1, segueIdentifier: "Show Map"),
-                    // call
-                    SectionInfo(titleForHeader: nil, cellType: "BasicInfoCell", numberOfRows: 1, segueIdentifier: nil),
                     // map
+                    SectionInfo(titleForHeader: nil, cellType: "MapviewCell", numberOfRows: 1, segueIdentifier: nil),
+                    SectionInfo(titleForHeader: nil, cellType: "BasicInfoCell", numberOfRows: 1, segueIdentifier: "Show Map"),
+                    // call
                     SectionInfo(titleForHeader: nil, cellType: "BasicInfoCell", numberOfRows: 1, segueIdentifier: nil),
                     SectionInfo(titleForHeader: nil, cellType: "BasicInfoCell", numberOfRows: 1, segueIdentifier: "Show Website"),
                 ]
@@ -47,6 +49,7 @@ class RestaurantInfoTableViewController: UITableViewController {
         }
     }
     
+    private var defaults = Defaults()
     private var locationManager = CLLocationManager()
     
     @IBAction func share(sender: UIBarButtonItem) {
@@ -59,6 +62,21 @@ class RestaurantInfoTableViewController: UITableViewController {
                 ],
                 applicationActivities: nil)
             presentViewController(activityViewController, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func addToFavorite(sender: UIBarButtonItem) {
+        if let restaurant = restaurant, uid = defaults.currentUser, context = managedObjectContext {
+            if let user = User.queryUsers(uid, inManagedObjectContext: context).first {
+                context.performBlock {
+                    user.addRestaurantObject(restaurant)
+                    do {
+                        try context.save()
+                    } catch let error {
+                        print("Core Data Error: \(error)")
+                    }
+                }
+            }
         }
     }
     
@@ -84,11 +102,11 @@ class RestaurantInfoTableViewController: UITableViewController {
                 mapCell.address = restaurant?.formattedAddress
             }
         case 2:
-            cell.textLabel?.text = "Phone Number"
-            cell.detailTextLabel?.text = restaurant?.phoneNumberStr
-        case 3:
             cell.textLabel?.text = "Address"
             cell.detailTextLabel?.text = restaurant?.formattedAddress
+        case 3:
+            cell.textLabel?.text = "Phone Number"
+            cell.detailTextLabel?.text = restaurant?.phoneNumberStr
         case 4:
             cell.textLabel?.text = "Website"
             if let url = restaurant?.website {
@@ -127,7 +145,7 @@ class RestaurantInfoTableViewController: UITableViewController {
         if let segueIdentifier = sections[indexPath.section].segueIdentifier {
             performSegueWithIdentifier(segueIdentifier, sender: tableView.cellForRowAtIndexPath(indexPath))
         } else {
-            if indexPath.section == 2 {
+            if indexPath.section == 3 {
                 if let phone = restaurant?.phoneNumber {
                     if let url = NSURL(string: "tel://\(phone)") {
                         UIApplication.sharedApplication().openURL(url)
