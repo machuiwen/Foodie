@@ -32,7 +32,7 @@ class SettingsTableViewController: UITableViewController {
     
     @IBOutlet private weak var profileImage: UIImageView!
     
-    var managedObjectContext = AppDelegate.managedObjectContext!
+    var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
     private var defaults = Defaults()
     
     @IBAction private func logOut(sender: UIButton) {
@@ -66,7 +66,7 @@ class SettingsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0: return 5
+        case 0: return 6
         case 1: return 2
         default: return 0
         }
@@ -76,9 +76,10 @@ class SettingsTableViewController: UITableViewController {
         switch indexPath.section{
         case 0:
             switch indexPath.row {
-            case 1: cell.detailTextLabel?.text = fullname
-            case 2: cell.detailTextLabel?.text = userid
-            case 3: cell.detailTextLabel?.text = email
+            case 1: cell.detailTextLabel?.text = firstname
+            case 2: cell.detailTextLabel?.text = lastname
+            case 3: cell.detailTextLabel?.text = userid
+            case 4: cell.detailTextLabel?.text = email
             default: break
             }
         case 1:
@@ -95,6 +96,10 @@ class SettingsTableViewController: UITableViewController {
         return 10
     }
     
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
     // MARK: - ViewController Lifecycle
     
     override func viewDidLoad() {
@@ -104,8 +109,8 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let uid = userid {
-            let user = User.queryUsers(uid, inManagedObjectContext: managedObjectContext)[0]
+        if let uid = userid, context = managedObjectContext {
+            let user = User.queryUsers(uid, inManagedObjectContext: context)[0]
             firstname = user.firstname
             lastname = user.lastname
             email = user.email
@@ -113,6 +118,8 @@ class SettingsTableViewController: UITableViewController {
             if user.image != nil {
                 profileImage.image = UIImage(data: user.image!)
             }
+            gender = user.gender
+            tableView.reloadData()
         }
     }
     
@@ -154,8 +161,11 @@ class SettingsTableViewController: UITableViewController {
         if let euitvc = destinationvc as? EditUserInfoTableViewController {
             if let identifier = segue.identifier {
                 switch identifier {
-                case "Edit Name": euitvc.info = Constants.UserInfoType.Name
+                case "Edit First Name": euitvc.info = Constants.UserInfoType.FirstName
+                case "Edit Last Name": euitvc.info = Constants.UserInfoType.LastName
                 case "Edit Email": euitvc.info = Constants.UserInfoType.Email
+                case "Edit Address": euitvc.info = Constants.UserInfoType.Address
+                case "Edit Note": euitvc.info = Constants.UserInfoType.Note
                 default: break
                 }
             }

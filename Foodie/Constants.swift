@@ -18,7 +18,8 @@ struct Constants {
     static let LogInSuccess = "Log In Successful"
     
     enum UserInfoType {
-        case Name
+        case FirstName
+        case LastName
         case Email
         case Address
         case Gender
