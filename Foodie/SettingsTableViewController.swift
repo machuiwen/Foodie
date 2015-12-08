@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import MobileCoreServices
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: - Public API
     
@@ -30,7 +31,7 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
-    @IBOutlet private weak var profileImage: UIImageView!
+    
     
     var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
     private var defaults = Defaults()
@@ -58,6 +59,11 @@ class SettingsTableViewController: UITableViewController {
         presentViewController(alert, animated: true, completion: nil)
     }
     
+    @IBAction private func goBack(segue: UIStoryboardSegue) {
+        
+    }
+    
+    @IBOutlet private weak var profileImage: UIButton!
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -95,8 +101,49 @@ class SettingsTableViewController: UITableViewController {
         return 10
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            let alert = UIAlertController(
+                title: nil,
+                message: nil,
+                preferredStyle: UIAlertControllerStyle.ActionSheet
+            )
+            alert.addAction(UIAlertAction(
+                title: "Take Photo",
+                style: .Default) {
+                    [unowned self] (action) -> Void in
+                    if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+                        let picker = UIImagePickerController()
+                        picker.sourceType = .Camera
+                        picker.mediaTypes = [kUTTypeImage as String]
+                        picker.delegate = self
+                        picker.allowsEditing = true
+                        self.presentViewController(picker, animated: true, completion: nil)
+                    }
+                }
+            )
+            alert.addAction(UIAlertAction(
+                title: "Choose Photo",
+                style: .Default) {
+                    [unowned self] (action) -> Void in
+                    if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+                        let picker = UIImagePickerController()
+                        picker.sourceType = .PhotoLibrary
+                        picker.mediaTypes = [kUTTypeImage as String]
+                        picker.delegate = self
+                        picker.allowsEditing = true
+                        self.presentViewController(picker, animated: true, completion: nil)
+                    }
+                }
+            )
+            alert.addAction(UIAlertAction(
+                title: Constants.CancelButton,
+                style: .Cancel,
+                handler: nil)
+            )
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     // MARK: - ViewController Lifecycle
@@ -115,7 +162,7 @@ class SettingsTableViewController: UITableViewController {
             email = user.email
             address = user.address
             if user.image != nil {
-                profileImage.image = UIImage(data: user.image!)
+                profileImage.setImage(UIImage(data: user.image!), forState: UIControlState.Normal)
             }
             gender = user.gender
             tableView.reloadData()
@@ -149,6 +196,31 @@ class SettingsTableViewController: UITableViewController {
     }
     */
     
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        if let uid = defaults.currentUser, context = managedObjectContext {
+            let user = User.queryUsers(uid, inManagedObjectContext: context)[0]
+            context.performBlockAndWait {
+                user.image = UIImageJPEGRepresentation(image, 1.0)
+                do {
+                    try context.save()
+                } catch let error {
+                    print("Core Data Error: \(error)")
+                }
+            }
+            self.dismissViewControllerAnimated(true, completion: nil)
+            self.updatePhoto()
+        }
+        
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    private func updatePhoto() {
+        let user = User.queryUsers(defaults.currentUser!, inManagedObjectContext: managedObjectContext!)[0]
+        profileImage.setImage(UIImage(data: user.image!), forState: UIControlState.Normal)
+    }
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

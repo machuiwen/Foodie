@@ -16,10 +16,6 @@ class EditUserInfoTableViewController: UITableViewController, UITextFieldDelegat
             tableView.reloadData()
         }
     }
-    @IBAction func cancel(sender: UIBarButtonItem) {
-        self.view.endEditing(true)
-        navigationController?.popToRootViewControllerAnimated(true)
-    }
     
     @IBAction func save(sender: UIBarButtonItem) {
         if let info = info, uid = defaults.currentUser, context = managedObjectContext {

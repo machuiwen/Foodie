@@ -661,17 +661,23 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultprofile" translatesAutoresizingMaskIntoConstraints="NO" id="G8Z-o0-DUc">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpZ-Sv-x0Q">
                                                     <rect key="frame" x="479" y="10" width="80" height="80"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="BNv-em-duZ"/>
-                                                        <constraint firstAttribute="width" constant="80" id="NE3-Jz-JpZ"/>
+                                                        <constraint firstAttribute="height" constant="80" id="npB-No-BZz"/>
+                                                        <constraint firstAttribute="width" constant="80" id="ujI-Yw-oJa"/>
                                                     </constraints>
-                                                </imageView>
+                                                    <state key="normal" image="defaultprofile"/>
+                                                    <connections>
+                                                        <segue destination="3Uk-KY-F17" kind="popoverPresentation" identifier="Show Profile Image" popoverAnchorView="bpZ-Sv-x0Q" id="VEE-sz-lrF">
+                                                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                        </segue>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="G8Z-o0-DUc" secondAttribute="trailing" id="Wdq-Fm-iOW"/>
-                                                <constraint firstItem="G8Z-o0-DUc" firstAttribute="top" secondItem="EUV-lv-oDT" secondAttribute="topMargin" constant="2" id="hZQ-QQ-Zda"/>
+                                                <constraint firstItem="bpZ-Sv-x0Q" firstAttribute="top" secondItem="EUV-lv-oDT" secondAttribute="topMargin" constant="2" id="IkQ-P4-IaI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bpZ-Sv-x0Q" secondAttribute="trailing" id="eyj-xq-s7f"/>
                                                 <constraint firstItem="Nsm-Tk-gwC" firstAttribute="leading" secondItem="EUV-lv-oDT" secondAttribute="leadingMargin" constant="8" id="y7S-Ie-Y2G"/>
                                                 <constraint firstItem="Nsm-Tk-gwC" firstAttribute="centerY" secondItem="EUV-lv-oDT" secondAttribute="centerY" id="zic-ps-2Lz"/>
                                             </constraints>
@@ -836,7 +842,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="Yqm-wb-Dla"/>
                     <connections>
-                        <outlet property="profileImage" destination="G8Z-o0-DUc" id="wUh-s3-rDZ"/>
+                        <outlet property="profileImage" destination="bpZ-Sv-x0Q" id="saq-cL-pLg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGa-op-bPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -886,7 +892,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="V5q-ck-hdH">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="cancel:" destination="933-B8-GTk" id="qZX-PY-GfK"/>
+                                <segue destination="Oqg-i4-AAn" kind="unwind" unwindAction="goBack:" id="k48-d3-FDZ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="1hp-6j-G2T">
@@ -901,8 +907,39 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZs-Re-Cfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Oqg-i4-AAn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2446" y="1216"/>
+            <point key="canvasLocation" x="2610" y="1358"/>
+        </scene>
+        <!--User Image View Controller-->
+        <scene sceneID="Jp8-Zj-xLR">
+            <objects>
+                <viewController id="3Uk-KY-F17" customClass="UserImageViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ERG-Mi-Y0C"/>
+                        <viewControllerLayoutGuide type="bottom" id="fhU-L6-Xiy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qmj-lb-bPm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Bu-OE-8L7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2Bu-OE-8L7" secondAttribute="trailing" id="2xa-0Y-uhA"/>
+                            <constraint firstItem="2Bu-OE-8L7" firstAttribute="top" secondItem="Qmj-lb-bPm" secondAttribute="top" id="J5C-2o-VAJ"/>
+                            <constraint firstItem="2Bu-OE-8L7" firstAttribute="bottom" secondItem="fhU-L6-Xiy" secondAttribute="top" id="U9y-R4-hpk"/>
+                            <constraint firstItem="2Bu-OE-8L7" firstAttribute="leading" secondItem="Qmj-lb-bPm" secondAttribute="leading" id="rb6-5V-vzG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="028-RC-Yqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2610" y="678"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="tsV-su-0z3">
