@@ -61,7 +61,7 @@ class UserImageViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        updateImageSize()
+        updateImage()
     }
     
     override func viewDidLoad() {
@@ -74,12 +74,12 @@ class UserImageViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        updateImageSize()
+        updateImage()
     }
     
     // MARK: UI Helper
     
-    private func updateImageSize() {
+    private func updateImage() {
         let imageWidth = min(view.bounds.width, view.bounds.height)
         imageView.frame = CGRect(origin: CGPointZero, size: CGSize(width: imageWidth, height: imageWidth))
         imageView.center = view.center

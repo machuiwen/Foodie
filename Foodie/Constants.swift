@@ -16,6 +16,7 @@ struct Constants {
     static let CancelButton = "Cancel"
     static let LogoutButton = "Log Out"
     static let LogInSuccess = "Log In Successful"
+    static let PopViewControllerSegue = "Pop VC"
     
     enum UserInfoType {
         case FirstName

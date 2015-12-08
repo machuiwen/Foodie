@@ -236,8 +236,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PhotosCell" rowHeight="120" id="3wM-DH-HXW">
+                                <rect key="frame" x="0.0" y="92" width="600" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3wM-DH-HXW" id="dic-l6-JSj">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U0z-Pd-38Q">
+                                            <rect key="frame" x="0.0" y="8" width="600" height="103"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cg0-Bu-mff">
+                                                <size key="itemSize" width="96" height="96"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PreviewImageCell" id="7br-q2-0IU">
+                                                    <rect key="frame" x="0.0" y="4" width="96" height="96"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="U0z-Pd-38Q" secondAttribute="bottom" id="3j4-D0-CWA"/>
+                                        <constraint firstAttribute="trailing" secondItem="U0z-Pd-38Q" secondAttribute="trailing" id="46d-Vd-Zsv"/>
+                                        <constraint firstItem="U0z-Pd-38Q" firstAttribute="leading" secondItem="dic-l6-JSj" secondAttribute="leading" id="BYZ-Pb-fA0"/>
+                                        <constraint firstAttribute="topMargin" secondItem="U0z-Pd-38Q" secondAttribute="top" id="XgP-u5-oDA"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProfileImageCell" rowHeight="218" id="bXO-hT-NYR" customClass="ProfileImageTableViewCell" customModule="Foodie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="218"/>
+                                <rect key="frame" x="0.0" y="212" width="600" height="218"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bXO-hT-NYR" id="yYg-hw-qtQ">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="217"/>
@@ -286,15 +322,15 @@
                                     <outlet property="restaurantTypeLabel" destination="G3w-P6-YLn" id="Z4Q-Yy-ldy"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MapviewCell" rowHeight="150" id="zLp-ct-WnH" customClass="MapTableViewCell" customModule="Foodie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="310" width="600" height="150"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MapviewCell" rowHeight="120" id="zLp-ct-WnH" customClass="MapTableViewCell" customModule="Foodie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="430" width="600" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zLp-ct-WnH" id="IWR-yR-VRl">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XkQ-tv-kpX">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
                                         </mapView>
                                     </subviews>
                                     <constraints>
@@ -309,7 +345,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BasicInfoCell" textLabel="EiX-HQ-fBw" detailTextLabel="VRi-09-9c8" style="IBUITableViewCellStyleSubtitle" id="zbo-K2-Cgw">
-                                <rect key="frame" x="0.0" y="460" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="550" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zbo-K2-Cgw" id="nKa-Cs-l9P">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -890,7 +926,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="V5q-ck-hdH">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="Oqg-i4-AAn" kind="unwind" unwindAction="goBack:" id="k48-d3-FDZ"/>
+                                <segue destination="Oqg-i4-AAn" kind="unwind" identifier="Pop VC" unwindAction="goBack:" id="k48-d3-FDZ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="1hp-6j-G2T">
