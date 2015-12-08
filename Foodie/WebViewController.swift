@@ -18,10 +18,10 @@ class WebViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
-    // MARK: - Outlet
+    // MARK: - Outlets
     
     @IBOutlet private weak var webView: UIWebView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet private weak var searchBar: UISearchBar!
     
     // MARK: - View Controller Lifecycle
     
@@ -29,27 +29,31 @@ class WebViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         searchBar.delegate = self
         webView?.scalesPageToFit = true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         loadAddressUrl(urlPath)
     }
     
-    // MARK: - Core Function
+    // MARK: - Private Methods
     
     private func loadAddressUrl(url: String?) {
         if let url = url {
             if let requestUrl = NSURL(string: url) {
-                print("You are requesting \(requestUrl)")
+                print("You are requesting url: \(requestUrl)")
                 webView?.loadRequest(NSURLRequest(URL: requestUrl))
             }
         }
     }
     
-    // MARK: - UISearchBarDelegate Methods
+    // MARK: - UISearchBarDelegate
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         if var searchText = searchBar.text {
             if !searchText.hasPrefix("http") {
                 searchText = searchText.stringByReplacingOccurrencesOfString(" ", withString: "+")
-                searchText = "https://www.google.com/search?q=" + searchText
+                searchText = Constants.GoogleSearchRequestPrefix + searchText
             }
             loadAddressUrl(searchText)
         }
@@ -70,11 +74,5 @@ class WebViewController: UIViewController, UISearchBarDelegate {
         // Hide cancel button
         searchBar.setShowsCancelButton(false, animated: true)
     }
-    
-    //    // MARK: - Navigation
-    //
-    //    @IBAction private func goBackToRootView(sender: UIBarButtonItem) {
-    //        self.navigationController?.popToRootViewControllerAnimated(true)
-    //    }
     
 }

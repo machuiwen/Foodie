@@ -1,5 +1,5 @@
 //
-//  ImageViewController.swift
+//  RestaurantImageViewController.swift
 //  Foodie
 //
 //  Created by Chuiwen Ma on 12/3/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, UIScrollViewDelegate {
+class RestaurantImageViewController: UIViewController, UIScrollViewDelegate {
     
     // MARK: Public Model
     
@@ -49,7 +49,8 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     private func fetchImage() {
         if let url = imageURL {
             spinner?.startAnimating()
-            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [ weak weakSelf = self ] in
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+                [ weak weakSelf = self ] in
                 if let imageData = NSData(contentsOfURL: url) {
                     if url == weakSelf?.imageURL {
                         dispatch_async(dispatch_get_main_queue()) {
@@ -85,8 +86,8 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(imageView)
-        scrollView.minimumZoomScale = 0.04
-        scrollView.maximumZoomScale = 4.0
+        scrollView.minimumZoomScale = 0.1
+        scrollView.maximumZoomScale = 3.0
         updateZoomScale()
     }
     
@@ -111,11 +112,5 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
-    //
-    //    // MARK: Navigation
-    //
-    //    @IBAction private func goBackToRootView(sender: UIBarButtonItem) {
-    //        self.navigationController?.popToRootViewControllerAnimated(true)
-    //    }
     
 }

@@ -518,10 +518,10 @@
             </objects>
             <point key="canvasLocation" x="4133" y="659"/>
         </scene>
-        <!--Image View Controller-->
+        <!--Restaurant Image View Controller-->
         <scene sceneID="CCP-Ou-g06">
             <objects>
-                <viewController id="t8h-WR-lf3" customClass="ImageViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="t8h-WR-lf3" customClass="RestaurantImageViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xdK-ru-H87"/>
                         <viewControllerLayoutGuide type="bottom" id="TzK-mS-zk9"/>
@@ -536,6 +536,7 @@
                             </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sl-X1-ujd">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -17,6 +17,7 @@ struct Constants {
     static let LogoutButton = "Log Out"
     static let LogInSuccess = "Log In Successful"
     static let PopViewControllerSegue = "Pop VC"
+    static let GoogleSearchRequestPrefix = "https://www.google.com/search?q="
     
     enum UserInfoType {
         case FirstName
