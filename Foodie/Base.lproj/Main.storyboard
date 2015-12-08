@@ -230,13 +230,13 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="restaurantDescriptionLabel" destination="NBR-hD-5uF" id="lcS-gT-lWM"/>
                                     <outlet property="restaurantDistanceLabel" destination="9EX-1D-Qxa" id="AbH-cD-8Ka"/>
                                     <outlet property="restaurantImageView" destination="Zzl-7c-Ywz" id="nwl-h2-H2R"/>
                                     <outlet property="restaurantNameLabel" destination="qEQ-h4-J3G" id="0UN-99-r7r"/>
                                     <outlet property="restaurantNumOfReviewsLabel" destination="jVL-f4-vfS" id="bPp-7k-vsZ"/>
                                     <outlet property="restaurantPriceLabel" destination="rJA-iM-aHT" id="4Pe-MT-XVt"/>
                                     <outlet property="restaurantRatingLabel" destination="sSl-hT-xKm" id="bbq-vQ-WAT"/>
+                                    <outlet property="restaurantTypeLabel" destination="NBR-hD-5uF" id="t2V-i0-s2L"/>
                                     <segue destination="wSG-40-M75" kind="show" identifier="Show Restaurant Info" id="jzZ-Cp-pLJ"/>
                                 </connections>
                             </tableViewCell>
@@ -679,12 +679,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="zdT-sB-obs" kind="relationship" relationship="viewControllers" id="812-VI-LLu"/>
+                        <segue destination="GZC-h5-YE6" kind="relationship" relationship="viewControllers" id="dq6-m0-s9z"/>
                         <segue destination="y67-w6-UgG" kind="relationship" relationship="viewControllers" id="WDr-Lc-GYR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJu-Fa-kUh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="149" y="133"/>
+            <point key="canvasLocation" x="99" y="161"/>
         </scene>
         <!--Settings-->
         <scene sceneID="3gy-RO-FMb">
@@ -1135,6 +1136,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Qw-zK-s4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="865" y="-196"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="6TE-F9-MGa">
+            <objects>
+                <tableViewController id="GZC-h5-YE6" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fkl-Oo-liz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Favorite Restaurant" id="HzV-zP-ibe">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HzV-zP-ibe" id="ly0-su-oEh">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GZC-h5-YE6" id="NFE-0b-H3c"/>
+                            <outlet property="delegate" destination="GZC-h5-YE6" id="zAu-cy-bOi"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="PCT-ro-JGn"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sp8-HJ-Z1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="865" y="640"/>
         </scene>
         <!--Me-->
         <scene sceneID="a9K-2U-Hyn">

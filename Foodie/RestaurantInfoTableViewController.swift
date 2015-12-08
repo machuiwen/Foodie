@@ -152,48 +152,11 @@ class RestaurantInfoTableViewController: UITableViewController {
         } else if let imagesvc = destinationvc as? ImageCollectionViewController {
             imagesvc.imageURLs = (restaurant?.moreImageURLs)!
         }
-        //            if let tweetvc = destinationvc as? TweetTableViewController {
-        //                if let mention = sender as? UITableViewCell {
-        //                    if segue.identifier == "Search User" {
-        //                        tweetvc.searchText = mention.textLabel?.text
-        //                        /*
-        //                        // HW4 extra credit, introduce confusion in HW5
-        //                        if let user = mention.textLabel?.text {
-        //                        tweetvc.searchText = user + " OR " + user.substringFromIndex(user.startIndex.advancedBy(1))
-        //                        }
-        //                        */
-        //                    } else if segue.identifier == "Search Hashtag" {
-        //                        tweetvc.searchText = mention.textLabel?.text
-        //                    }
-        //                }
-        //            } else if let imagevc = destinationvc as? ImageViewController {
-        //                if let imageCell = sender as? ImageTableViewCell {
-        //                    imagevc.image = imageCell.myImage
-        //                }
-        //            } else if let webvc = destinationvc as? WebViewController {
-        //                if let urlCell = sender as? UITableViewCell {
-        //                    webvc.urlPath = urlCell.textLabel?.text
-        //                }
-        //            }
     }
-    
-    //    @IBAction private func goBackToRootView(sender: UIBarButtonItem) {
-    //        self.navigationController?.popToRootViewControllerAnimated(true)
-    //    }
-    
-    //////
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         locationManager.requestAlwaysAuthorization()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     // MARK: - Table view data source

@@ -12,7 +12,6 @@ import CoreData
 
 class User: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
     class func addUser(userid: String, password: String, firstname: String, lastname: String, inManagedObjectContext context: NSManagedObjectContext) {
         if let user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: context) as? User {
             user.id = userid

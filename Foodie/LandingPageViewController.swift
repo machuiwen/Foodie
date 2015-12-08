@@ -16,6 +16,11 @@ class LandingPageViewController: UIViewController {
     
     // MARK: - ViewController Lifecycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        defaults.initializeApp()
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if defaults.loggedIn == true {

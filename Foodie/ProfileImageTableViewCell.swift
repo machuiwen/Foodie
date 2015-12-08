@@ -36,7 +36,7 @@ class ProfileImageTableViewCell: UITableViewCell {
         if let r = restaurant {
             restaurantNameLabel.text = r.name
             restaurantTypeLabel.text = r.type
-            restaurantDescriptionLabel.text = r.description
+            restaurantDescriptionLabel.text = r.detailDescription
             fetchImage()
         }
     }

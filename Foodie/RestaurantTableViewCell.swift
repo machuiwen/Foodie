@@ -21,25 +21,24 @@ class RestaurantTableViewCell: UITableViewCell {
     // MARK: UI
     
     @IBOutlet private weak var restaurantNameLabel: UILabel!
-    @IBOutlet private weak var restaurantDescriptionLabel: UILabel!
+    @IBOutlet weak var restaurantTypeLabel: UILabel!
     @IBOutlet private weak var restaurantDistanceLabel: UILabel!
     @IBOutlet private weak var restaurantPriceLabel: UILabel!
     @IBOutlet private weak var restaurantRatingLabel: UILabel!
     @IBOutlet private weak var restaurantNumOfReviewsLabel: UILabel!
     @IBOutlet private weak var restaurantImageView: UIImageView!
     
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
     private func updateUI()
     {
         // TODO: implement this
         if restaurant != nil {
             restaurantNameLabel?.text = restaurant?.name
-            restaurantDescriptionLabel?.text = restaurant?.description
+            restaurantTypeLabel?.text = restaurant?.type
+            restaurantPriceLabel?.text = restaurant?.price
+            if let rating = restaurant?.rating {
+                restaurantRatingLabel?.text = "Rating: " + String(rating)
+            }
+            restaurantNumOfReviewsLabel?.text = String(restaurant?.liked?.count ?? 0) + " Reviews"
             myImage = nil
             fetchImage()
             

@@ -12,7 +12,6 @@
 		5D0383491C138A8A009D4FF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D0383481C138A8A009D4FF0 /* Assets.xcassets */; };
 		5D03834C1C138A8A009D4FF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D03834A1C138A8A009D4FF0 /* LaunchScreen.storyboard */; };
 		5D0383561C138D43009D4FF0 /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383551C138D43009D4FF0 /* RestaurantsTableViewController.swift */; };
-		5D0383581C138D8C009D4FF0 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383571C138D8C009D4FF0 /* Restaurant.swift */; };
 		5D03835A1C138DCA009D4FF0 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0383591C138DCA009D4FF0 /* RestaurantTableViewCell.swift */; };
 		5D03835C1C1394EB009D4FF0 /* RestaurantInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03835B1C1394EB009D4FF0 /* RestaurantInfoTableViewController.swift */; };
 		5D03835E1C139557009D4FF0 /* ProfileImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03835D1C139557009D4FF0 /* ProfileImageTableViewCell.swift */; };
@@ -37,6 +36,8 @@
 		5D9BD2AA1C141EEF0058C655 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A81C141EEF0058C655 /* User.swift */; };
 		5D9BD2AD1C14FC7C0058C655 /* Foodie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2AB1C14FC7C0058C655 /* Foodie.xcdatamodeld */; };
 		5DB887461C166437000C4212 /* EditUserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB887451C166437000C4212 /* EditUserInfoTableViewController.swift */; };
+		5DBB8E651C1782F300970B52 /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB8E641C1782F300970B52 /* Restaurant+CoreDataProperties.swift */; };
+		5DBB8E671C17834100970B52 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB8E661C17834100970B52 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +48,6 @@
 		5D03834B1C138A8A009D4FF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D03834D1C138A8A009D4FF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D0383551C138D43009D4FF0 /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
-		5D0383571C138D8C009D4FF0 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		5D0383591C138DCA009D4FF0 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		5D03835B1C1394EB009D4FF0 /* RestaurantInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoTableViewController.swift; sourceTree = "<group>"; };
 		5D03835D1C139557009D4FF0 /* ProfileImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -72,6 +72,8 @@
 		5D9BD2A81C141EEF0058C655 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5D9BD2AC1C14FC7C0058C655 /* Foodie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodie.xcdatamodel; sourceTree = "<group>"; };
 		5DB887451C166437000C4212 /* EditUserInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserInfoTableViewController.swift; sourceTree = "<group>"; };
+		5DBB8E641C1782F300970B52 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5DBB8E661C17834100970B52 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,17 +107,16 @@
 			isa = PBXGroup;
 			children = (
 				5D0383421C138A8A009D4FF0 /* Main.storyboard */,
-				5D7957D71C1748D0006315B8 /* RestaurantsTableHeaderView.swift */,
 				5D0383551C138D43009D4FF0 /* RestaurantsTableViewController.swift */,
 				5D03835B1C1394EB009D4FF0 /* RestaurantInfoTableViewController.swift */,
 				5D03835D1C139557009D4FF0 /* ProfileImageTableViewCell.swift */,
 				5D0383591C138DCA009D4FF0 /* RestaurantTableViewCell.swift */,
-				5D0383571C138D8C009D4FF0 /* Restaurant.swift */,
 				5D9BD2A31C13CDF50058C655 /* MapViewController.swift */,
 				5D7BD4801C13B508007BBCBD /* MapTableViewCell.swift */,
 				5D9BD2A11C13C54C0058C655 /* MapPin.swift */,
 				5D0383671C13AACF009D4FF0 /* ImageCollectionLayout.swift */,
 				5D0383611C139C38009D4FF0 /* ImageCollectionViewController.swift */,
+				5D7957D71C1748D0006315B8 /* RestaurantsTableHeaderView.swift */,
 				5D0383631C139CB3009D4FF0 /* ImageCollectionViewCell.swift */,
 				5D0383651C13A665009D4FF0 /* RestaurantImageViewController.swift */,
 				5D03835F1C1398BA009D4FF0 /* WebViewController.swift */,
@@ -144,6 +145,8 @@
 		5D0383541C138B37009D4FF0 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				5DBB8E661C17834100970B52 /* Restaurant.swift */,
+				5DBB8E641C1782F300970B52 /* Restaurant+CoreDataProperties.swift */,
 				5D9BD2A71C141EEF0058C655 /* User+CoreDataProperties.swift */,
 				5D9BD2A81C141EEF0058C655 /* User.swift */,
 				5D9BD2AB1C14FC7C0058C655 /* Foodie.xcdatamodeld */,
@@ -251,7 +254,6 @@
 				5DB887461C166437000C4212 /* EditUserInfoTableViewController.swift in Sources */,
 				5D9BD2A21C13C54C0058C655 /* MapPin.swift in Sources */,
 				5D03835E1C139557009D4FF0 /* ProfileImageTableViewCell.swift in Sources */,
-				5D0383581C138D8C009D4FF0 /* Restaurant.swift in Sources */,
 				5D0383561C138D43009D4FF0 /* RestaurantsTableViewController.swift in Sources */,
 				5D0383641C139CB3009D4FF0 /* ImageCollectionViewCell.swift in Sources */,
 				5D7957D81C1748D0006315B8 /* RestaurantsTableHeaderView.swift in Sources */,
@@ -261,12 +263,14 @@
 				5D03833F1C138A8A009D4FF0 /* AppDelegate.swift in Sources */,
 				5D9BD2A61C1409600058C655 /* SignUpViewController.swift in Sources */,
 				5D9BD2A91C141EEF0058C655 /* User+CoreDataProperties.swift in Sources */,
+				5DBB8E651C1782F300970B52 /* Restaurant+CoreDataProperties.swift in Sources */,
 				5D9BD2AA1C141EEF0058C655 /* User.swift in Sources */,
 				5D0383661C13A665009D4FF0 /* RestaurantImageViewController.swift in Sources */,
 				5D18D5421C16210000E6D74A /* LandingPageViewController.swift in Sources */,
 				5D6663E71C16B3520022ACE8 /* UserImageViewController.swift in Sources */,
 				5D18D5461C16296800E6D74A /* Defaults.swift in Sources */,
 				5D18D5401C16128E00E6D74A /* SettingsTableViewController.swift in Sources */,
+				5DBB8E671C17834100970B52 /* Restaurant.swift in Sources */,
 				5D9BD2A41C13CDF50058C655 /* MapViewController.swift in Sources */,
 				5D18D53E1C160A4E00E6D74A /* LogInViewController.swift in Sources */,
 				5D0383601C1398BA009D4FF0 /* WebViewController.swift in Sources */,
