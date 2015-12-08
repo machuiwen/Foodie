@@ -67,7 +67,7 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return 6
-        case 1: return 2
+        case 1: return 1
         default: return 0
         }
     }
@@ -84,7 +84,6 @@ class SettingsTableViewController: UITableViewController {
             }
         case 1:
             switch indexPath.row {
-            case 0: cell.detailTextLabel?.text = gender
             default: break
             }
         default:

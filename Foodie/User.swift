@@ -28,4 +28,5 @@ class User: NSManagedObject {
         let users = (try? context.executeFetchRequest(request)) as? [User] ?? []
         return users
     }
+    
 }

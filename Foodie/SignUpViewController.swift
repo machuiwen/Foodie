@@ -43,10 +43,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             } else if !Methods.isValidPassword(password.text) {
                 showAlert("Invalid Password", message: "8-20 characters in 0-9, a-z or A-Z")
                 password.text = nil
-            } else if firstname.text == nil || firstname.text!.isEmpty {
-                showAlert("Invalid Name", message: "First name cannot be empty")
-            } else if lastname.text == nil || lastname.text!.isEmpty {
-                showAlert("Invalid Name", message: "Last name cannot be empty")
+            } else if !Methods.isValidName(firstname.text) {
+                showAlert("Invalid Name", message: "Please try again")
+            } else if !Methods.isValidName(lastname.text) {
+                showAlert("Invalid Name", message: "Please try again")
             } else {
                 updateDBWithNewUser(uid, password: password.text!,
                     firstname: firstname.text!, lastname: lastname.text!,
