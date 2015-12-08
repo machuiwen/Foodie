@@ -845,7 +845,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGa-op-bPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1751" y="1216"/>
+            <point key="canvasLocation" x="1655" y="3568"/>
         </scene>
         <!--Edit User Info Table View Controller-->
         <scene sceneID="KtL-VR-xAd">
@@ -907,7 +907,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZs-Re-Cfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Oqg-i4-AAn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="1358"/>
+            <point key="canvasLocation" x="2514" y="3710"/>
         </scene>
         <!--User Image View Controller-->
         <scene sceneID="Jp8-Zj-xLR">
@@ -949,7 +949,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2610" y="678"/>
+            <point key="canvasLocation" x="2514" y="3030"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="tsV-su-0z3">
@@ -1044,11 +1044,11 @@
             </objects>
             <point key="canvasLocation" x="-975" y="1037"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Restaurants-->
         <scene sceneID="8VG-yn-HtK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zdT-sB-obs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="eOL-cn-svb"/>
+                    <tabBarItem key="tabBarItem" title="Restaurants" image="restaurant" id="eOL-cn-svb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xf9-oc-9UJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1080,16 +1080,17 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="imE-XX-gCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="994" y="1216"/>
+            <point key="canvasLocation" x="898" y="3568"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultprofile" width="128" height="128"/>
         <image name="launch" width="422" height="750"/>
         <image name="me" width="32" height="32"/>
+        <image name="restaurant" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FcT-DA-YSN"/>
-        <segue reference="SQF-e8-QbU"/>
+        <segue reference="w1J-tJ-0XJ"/>
     </inferredMetricsTieBreakers>
 </document>
