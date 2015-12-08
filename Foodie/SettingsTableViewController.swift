@@ -11,26 +11,38 @@ import CoreData
 
 class SettingsTableViewController: UITableViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    // MARK: - Public API
+    
+    var userid: String?
+    
+    private var firstname: String?
+    private var lastname: String?
+    private var email: String?
+    private var address: String?
+    private var gender: String?
+    private var userword: String?
+    
+    private var fullname: String? {
+        if firstname == nil || lastname == nil {
+            return nil
+        } else {
+            return firstname! + " " + lastname!
+        }
     }
     
-    var defaults = Defaults()
+    @IBOutlet private weak var profileImage: UIImageView!
     
-    @IBAction func logOut(sender: UIButton) {
+    var managedObjectContext = AppDelegate.managedObjectContext!
+    private var defaults = Defaults()
+    
+    @IBAction private func logOut(sender: UIButton) {
         let alert = UIAlertController(
             title: nil,
             message: "Are you sure to log out?",
             preferredStyle: UIAlertControllerStyle.ActionSheet
         )
         alert.addAction(UIAlertAction(
-            title: "Log Out",
+            title: Constants.LogoutButton,
             style: .Destructive)
             {
                 [weak weakSelf = self] (action: UIAlertAction) -> Void in
@@ -39,16 +51,11 @@ class SettingsTableViewController: UITableViewController {
             }
         )
         alert.addAction(UIAlertAction(
-            title: "Cancel",
+            title: Constants.CancelButton,
             style: .Cancel,
             handler: nil)
         )
         presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
@@ -65,23 +72,49 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-    
-    // Configure the cell...
-    
-    return cell
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section{
+        case 0:
+            switch indexPath.row {
+            case 1: cell.detailTextLabel?.text = fullname
+            case 2: cell.detailTextLabel?.text = userid
+            case 3: cell.detailTextLabel?.text = email
+            default: break
+            }
+        case 1:
+            switch indexPath.row {
+            case 0: cell.detailTextLabel?.text = gender
+            default: break
+            }
+        default:
+            break
+        }
     }
-    */
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the specified item to be editable.
-    return true
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
     }
-    */
+    
+    // MARK: - ViewController Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userid = defaults.currentUser
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let uid = userid {
+            let user = User.queryUsers(uid, inManagedObjectContext: managedObjectContext)[0]
+            firstname = user.firstname
+            lastname = user.lastname
+            email = user.email
+            address = user.address
+            if user.image != nil {
+                profileImage.image = UIImage(data: user.image!)
+            }
+        }
+    }
     
     /*
     // Override to support editing the table view.
@@ -110,14 +143,23 @@ class SettingsTableViewController: UITableViewController {
     }
     */
     
-    /*
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        var destinationvc: UIViewController? = segue.destinationViewController
+        if let navcon = destinationvc as? UINavigationController {
+            destinationvc = navcon.visibleViewController
+        }
+        if let euitvc = destinationvc as? EditUserInfoTableViewController {
+            if let identifier = segue.identifier {
+                switch identifier {
+                case "Edit Name": euitvc.info = Constants.UserInfoType.Name
+                case "Edit Email": euitvc.info = Constants.UserInfoType.Email
+                default: break
+                }
+            }
+        }
     }
-    */
     
 }

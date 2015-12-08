@@ -8,6 +8,7 @@
 
 import Foundation
 
+// NSUserDefaults wrapper
 class Defaults {
     
     private var defaults = NSUserDefaults.standardUserDefaults()
@@ -18,8 +19,16 @@ class Defaults {
     }
     
     func logOutCurrentUser() {
-        defaults.setBool(false, forKey: Constants.LogInFlag)
         defaults.removeObjectForKey(Constants.CurrentUser)
+        defaults.setBool(false, forKey: Constants.LogInFlag)
+    }
+    
+    var currentUser: String? {
+        return defaults.stringForKey(Constants.CurrentUser)
+    }
+    
+    var loggedIn: Bool? {
+        return defaults.boolForKey(Constants.LogInFlag)
     }
     
 }
