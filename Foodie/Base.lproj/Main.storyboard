@@ -402,7 +402,13 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="9Sl-du-nVr"/>
+                    <navigationItem key="navigationItem" id="9Sl-du-nVr">
+                        <barButtonItem key="rightBarButtonItem" image="share" id="tNn-IT-3pV">
+                            <connections>
+                                <action selector="share:" destination="wSG-40-M75" id="6uC-y6-huY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="Oc2-4e-ZG5" kind="show" identifier="Show Website" id="bT8-WF-t5H"/>
@@ -427,7 +433,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQW-t3-1vj">
-                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="512" width="600" height="44"/>
                                 <items>
                                     <barButtonItem title="◀︎" id="9bq-8Y-1e4"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TMG-DH-9wg"/>
@@ -443,7 +449,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-Y1-0qT">
-                                <rect key="frame" x="0.0" y="108" width="600" height="399"/>
+                                <rect key="frame" x="0.0" y="108" width="600" height="404"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
@@ -529,7 +535,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="miG-qp-0aO">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -565,7 +571,7 @@
                                 <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sl-X1-ujd">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
                         </subviews>
@@ -1155,6 +1161,7 @@
         <image name="launch" width="422" height="750"/>
         <image name="me" width="32" height="32"/>
         <image name="restaurant" width="32" height="32"/>
+        <image name="share" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c63-oB-HNZ"/>

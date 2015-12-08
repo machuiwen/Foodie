@@ -49,6 +49,19 @@ class RestaurantInfoTableViewController: UITableViewController {
     
     private var locationManager = CLLocationManager()
     
+    @IBAction func share(sender: UIBarButtonItem) {
+        if let restaurant = restaurant {
+            let activityViewController = UIActivityViewController(
+                activityItems: [
+                    restaurant.name!,
+                    restaurant.type!,
+                    restaurant.formattedAddress!,
+                ],
+                applicationActivities: nil)
+            presentViewController(activityViewController, animated: true, completion: nil)
+        }
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
