@@ -669,9 +669,7 @@
                                                     </constraints>
                                                     <state key="normal" image="defaultprofile"/>
                                                     <connections>
-                                                        <segue destination="3Uk-KY-F17" kind="popoverPresentation" identifier="Show Profile Image" popoverAnchorView="bpZ-Sv-x0Q" id="VEE-sz-lrF">
-                                                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                        </segue>
+                                                        <segue destination="3Uk-KY-F17" kind="presentation" identifier="Show User Image" modalTransitionStyle="coverVertical" id="QJl-eM-e1z"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -926,6 +924,10 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Bu-OE-8L7">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="oAD-sw-bCx" appends="YES" id="5Jj-7p-ZoY"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -936,8 +938,16 @@
                             <constraint firstItem="2Bu-OE-8L7" firstAttribute="leading" secondItem="Qmj-lb-bPm" secondAttribute="leading" id="rb6-5V-vzG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="2Bu-OE-8L7" id="4Sk-Bq-C49"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="028-RC-Yqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oAD-sw-bCx">
+                    <connections>
+                        <action selector="goBack:" destination="3Uk-KY-F17" id="AQ9-Nh-83V"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2610" y="678"/>
         </scene>

@@ -9,19 +9,8 @@
 import UIKit
 
 class UserImageViewController: UIViewController, UIScrollViewDelegate {
-
-    
     
     // MARK: Public Model
-    
-    var imageURL: NSURL? {
-        didSet {
-            image = nil
-            if view.window != nil {
-                fetchImage()
-            }
-        }
-    }
     
     var image: UIImage? {
         get {
@@ -34,6 +23,10 @@ class UserImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    // MARK: Properties
+    
+    private var imageView = UIImageView()
+    
     // MARK: Outlets
     
     @IBOutlet private weak var scrollView: UIScrollView! {
@@ -43,23 +36,11 @@ class UserImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    // MARK: Private Implementation
+    // MARK: Tap Gesture Recognizer
     
-    private func fetchImage() {
-        if let url = imageURL {
-            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [ weak weakSelf = self ] in
-                if let imageData = NSData(contentsOfURL: url) {
-                    if url == weakSelf?.imageURL {
-                        dispatch_async(dispatch_get_main_queue()) {
-                            weakSelf?.image = UIImage(data: imageData)
-                        }
-                    }
-                }
-            }
-        }
+    @IBAction func goBack(sender: UITapGestureRecognizer) {
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    private var imageView = UIImageView()
     
     // MARK: UIScrollViewDelegate
     
@@ -67,54 +48,42 @@ class UserImageViewController: UIViewController, UIScrollViewDelegate {
         return imageView
     }
     
-    func scrollViewDidZoom(scrollView: UIScrollView) {
-        userExplicitZoom = true
+    func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat) {
+        // soft limit
+        if scale < 1 {
+            scrollView.setZoomScale(1, animated: true)
+        } else if scale > 2 {
+            scrollView.setZoomScale(2, animated: true)
+        }
     }
     
-    // MARK: View Controller Lifecycle
+    // MARK: ViewController Lifecycle
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if image == nil {
-            fetchImage()
-        }
+        updateImageSize()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(imageView)
-        scrollView.minimumZoomScale = 0.04
-        scrollView.maximumZoomScale = 4.0
-        updateZoomScale()
+        // hard limit
+        scrollView.minimumZoomScale = 0.1
+        scrollView.maximumZoomScale = 3.0
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        updateZoomScale()
+        updateImageSize()
     }
     
     // MARK: UI Helper
     
-    private var userExplicitZoom = false
-    private func updateZoomScale() {
-        if userExplicitZoom == false {
-            let scrollViewSize = scrollView.bounds.size
-            let imageViewSize = imageView.bounds.size
-            if scrollViewSize.width != 0 && imageViewSize.width != 0 {
-                let zoomScale = max(scrollViewSize.height / imageViewSize.height, scrollViewSize.width / imageViewSize.width)
-                scrollView.minimumZoomScale = min(0.04, zoomScale)
-                scrollView.maximumZoomScale = max(4, zoomScale)
-                scrollView.setZoomScale(zoomScale, animated: false)
-                userExplicitZoom = false
-            }
-        }
+    private func updateImageSize() {
+        let imageWidth = min(view.bounds.width, view.bounds.height)
+        imageView.frame = CGRect(origin: CGPointZero, size: CGSize(width: imageWidth, height: imageWidth))
+        imageView.center = view.center
+        scrollView?.contentSize = imageView.frame.size
     }
-    //
-    //    // MARK: Navigation
-    //
-    //    @IBAction private func goBackToRootView(sender: UIBarButtonItem) {
-    //        self.navigationController?.popToRootViewControllerAnimated(true)
-    //    }
-
-
+    
 }

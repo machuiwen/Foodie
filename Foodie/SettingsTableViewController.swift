@@ -10,7 +10,9 @@ import UIKit
 import CoreData
 import MobileCoreServices
 
-class SettingsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SettingsTableViewController: UITableViewController, UIImagePickerControllerDelegate,
+    UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate
+{
     
     // MARK: - Public API
     
@@ -240,6 +242,12 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
                 default: break
                 }
             }
+        } else if let uivc = destinationvc as? UserImageViewController {
+            if let ppc = uivc.popoverPresentationController {
+                ppc.permittedArrowDirections = UIPopoverArrowDirection.Any
+                ppc.delegate = self
+            }
+            uivc.image = profileImage.imageView?.image
         }
     }
     
