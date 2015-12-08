@@ -26,7 +26,7 @@ class EditUserInfoTableViewController: UITableViewController, UITextFieldDelegat
     
     // MARK: - Actions
     
-    @IBAction func save(sender: UIBarButtonItem) {
+    @IBAction private func save(sender: UIBarButtonItem) {
         if let info = info, uid = defaults.currentUser, context = managedObjectContext {
             let user = User.queryUsers(uid, inManagedObjectContext: context)[0]
             switch info {

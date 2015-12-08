@@ -17,26 +17,22 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     // MARK: - Public API
     
     var userid: String?
+    var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
+    
+    // MARK: - Private Properties
     
     private var firstname: String?
     private var lastname: String?
     private var email: String?
     private var address: String?
-    private var gender: String?
     private var userword: String?
-    
-    private var fullname: String? {
-        if firstname == nil || lastname == nil {
-            return nil
-        } else {
-            return firstname! + " " + lastname!
-        }
-    }
-    
-    
-    
-    var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
     private var defaults = Defaults()
+    
+    // MARK: - Outlets
+    
+    @IBOutlet private weak var profileImage: UIButton!
+    
+    // MARK: - Actions
     
     @IBAction private func logOut(sender: UIButton) {
         let alert = UIAlertController(
@@ -62,10 +58,9 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     }
     
     @IBAction private func goBack(segue: UIStoryboardSegue) {
-        
+        print("VC Unwinded")
     }
     
-    @IBOutlet private weak var profileImage: UIButton!
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -90,14 +85,12 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
             case 4: cell.detailTextLabel?.text = email
             default: break
             }
-        case 1:
-            switch indexPath.row {
-            default: break
-            }
         default:
             break
         }
     }
+    
+    // MARK: - Table view delegate
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
@@ -161,42 +154,17 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
             let user = User.queryUsers(uid, inManagedObjectContext: context)[0]
             firstname = user.firstname
             lastname = user.lastname
+            userid = uid
             email = user.email
             address = user.address
             if user.image != nil {
                 profileImage.setImage(UIImage(data: user.image!), forState: UIControlState.Normal)
             }
-            gender = user.gender
             tableView.reloadData()
         }
     }
     
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-    }
-    */
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the item to be re-orderable.
-    return true
-    }
-    */
+    // MARK: Image Picker Controller Delegate
     
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         if let uid = defaults.currentUser, context = managedObjectContext {
@@ -219,13 +187,18 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // MARK: - Private Methods
+    
     private func updatePhoto() {
-        let user = User.queryUsers(defaults.currentUser!, inManagedObjectContext: managedObjectContext!)[0]
-        profileImage.setImage(UIImage(data: user.image!), forState: UIControlState.Normal)
+        if let uid = userid, context = managedObjectContext {
+            if let image = User.queryUsers(uid, inManagedObjectContext: context).first?.image {
+                profileImage.setImage(UIImage(data: image), forState: UIControlState.Normal)
+            }
+        }
     }
+    
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var destinationvc: UIViewController? = segue.destinationViewController
         if let navcon = destinationvc as? UINavigationController {
@@ -243,10 +216,6 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
                 }
             }
         } else if let uivc = destinationvc as? UserImageViewController {
-            if let ppc = uivc.popoverPresentationController {
-                ppc.permittedArrowDirections = UIPopoverArrowDirection.Any
-                ppc.delegate = self
-            }
             uivc.image = profileImage.imageView?.image
         }
     }
