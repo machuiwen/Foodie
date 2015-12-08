@@ -34,7 +34,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     private func fetchImage() {
         if let url = imageURL {
-            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [ weak weakSelf = self ] in
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+                [ weak weakSelf = self ] in
                 if let imageData = NSData(contentsOfURL: url) {
                     if url == weakSelf?.imageURL {
                         dispatch_async(dispatch_get_main_queue()) {

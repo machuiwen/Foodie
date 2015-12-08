@@ -21,6 +21,12 @@ class RestaurantsTableViewController: UITableViewController {
     //        }
     //    }
     
+    @IBOutlet private weak var headerImageView: UIImageView!
+    
+//    @IBOutlet private weak var headerScrollView: UIScrollView! { didSet { headerScrollView.delegate = self } }
+    
+//    private var headerImageView = UIImageView()
+    
     var restaurants = [Array<Restaurant>]() {
         didSet {
             tableView.reloadData()

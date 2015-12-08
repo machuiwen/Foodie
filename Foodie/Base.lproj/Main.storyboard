@@ -125,9 +125,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="o93-jx-7vl" customClass="RestaurantsTableHeaderView" customModule="Foodie" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="64" width="600" height="185"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHx-Ce-t17">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="185"/>
+                                </scrollView>
+                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" defersCurrentPageDisplay="YES" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="hks-9V-ulJ">
+                                    <rect key="frame" x="272" y="140" width="55" height="37"/>
+                                </pageControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="EHx-Ce-t17" firstAttribute="top" secondItem="o93-jx-7vl" secondAttribute="top" id="6Ew-Ns-nT5"/>
+                                <constraint firstAttribute="bottom" secondItem="EHx-Ce-t17" secondAttribute="bottom" id="7aj-Hc-nXZ"/>
+                                <constraint firstAttribute="trailing" secondItem="EHx-Ce-t17" secondAttribute="trailing" id="BPl-aO-Tvo"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="hks-9V-ulJ" secondAttribute="bottom" id="C5G-GK-03k"/>
+                                <constraint firstItem="EHx-Ce-t17" firstAttribute="leading" secondItem="o93-jx-7vl" secondAttribute="leading" id="KcW-UN-FWf"/>
+                                <constraint firstItem="hks-9V-ulJ" firstAttribute="centerX" secondItem="o93-jx-7vl" secondAttribute="centerX" id="dps-Q5-HK1"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="pageControl" destination="hks-9V-ulJ" id="QTt-Kb-b3n"/>
+                                <outlet property="scrollView" destination="EHx-Ce-t17" id="kuJ-oo-FPI"/>
+                            </connections>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RestaurantCell" rowHeight="101" id="veq-7o-wEw" customClass="RestaurantTableViewCell" customModule="Foodie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="101"/>
+                                <rect key="frame" x="0.0" y="277" width="600" height="101"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="veq-7o-wEw" id="wKR-C7-whZ">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
@@ -221,7 +246,9 @@
                             <outlet property="delegate" destination="smV-GH-a3q" id="c1l-Qo-tS6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="sTb-Q3-xwj"/>
+                    <navigationItem key="navigationItem" id="sTb-Q3-xwj">
+                        <nil key="title"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3P-UR-JPA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -374,6 +401,9 @@
                             <outlet property="delegate" destination="wSG-40-M75" id="Tko-Ym-LMv"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="9Sl-du-nVr"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="Oc2-4e-ZG5" kind="show" identifier="Show Website" id="bT8-WF-t5H"/>
                         <segue destination="Plh-kN-sNc" kind="show" identifier="Show Images" id="cAp-pQ-tzO"/>
@@ -1127,7 +1157,7 @@
         <image name="restaurant" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FcT-DA-YSN"/>
+        <segue reference="c63-oB-HNZ"/>
         <segue reference="w1J-tJ-0XJ"/>
     </inferredMetricsTieBreakers>
 </document>
