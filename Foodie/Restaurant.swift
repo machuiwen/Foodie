@@ -35,6 +35,13 @@ class Restaurant: NSManagedObject {
         return restaurants
     }
     
+    class func queryRestaurant(name: String, inManagedObjectContext context: NSManagedObjectContext) -> Restaurant? {
+        let request = NSFetchRequest(entityName: "Restaurant")
+        request.predicate = NSPredicate(format: "name = %@", name)
+        let restaurants = (try? context.executeFetchRequest(request)) as? [Restaurant] ?? []
+        return restaurants.first
+    }
+    
     var phoneNumberStr: String? {
         if let phoneNumber = phoneNumber as? Int {
             let s1 = String(format: "%03d", phoneNumber / 10000000)

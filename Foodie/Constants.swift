@@ -21,6 +21,7 @@ struct Constants {
     static let EmptyStr = ""
     static let AppInitialized = "Innitialized"
     static let RestaurantCell = "RestaurantCell"
+    static let FavoriteRestaurantCell = "FavoriteRestaurantCell"
     
     enum UserInfoType {
         case FirstName
