@@ -407,13 +407,29 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQW-t3-1vj">
                                 <rect key="frame" x="0.0" y="512" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="◀︎" id="9bq-8Y-1e4"/>
+                                    <barButtonItem title="◀︎" id="9bq-8Y-1e4">
+                                        <connections>
+                                            <action selector="goBack" destination="Fen-Y1-0qT" id="Orz-pR-kCX"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TMG-DH-9wg"/>
-                                    <barButtonItem title="▶︎" id="A3i-7l-2h7"/>
+                                    <barButtonItem title="▶︎" id="A3i-7l-2h7">
+                                        <connections>
+                                            <action selector="goForward" destination="Fen-Y1-0qT" id="LZL-WK-hgU"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Vte-ZK-e20"/>
-                                    <barButtonItem systemItem="refresh" id="VcP-iM-2Jb"/>
+                                    <barButtonItem systemItem="refresh" id="VcP-iM-2Jb">
+                                        <connections>
+                                            <action selector="reload" destination="Fen-Y1-0qT" id="LyH-72-JaC"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="x1T-rb-cN5"/>
-                                    <barButtonItem systemItem="stop" id="euw-bu-svx"/>
+                                    <barButtonItem systemItem="stop" id="euw-bu-svx">
+                                        <connections>
+                                            <action selector="stopLoading" destination="Fen-Y1-0qT" id="rGh-V8-SCZ"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <searchBar contentMode="redraw" placeholder="Search or enter website name" translatesAutoresizingMaskIntoConstraints="NO" id="RSc-76-tI3">

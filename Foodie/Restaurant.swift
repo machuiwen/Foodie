@@ -76,8 +76,13 @@ class Restaurant: NSManagedObject {
     }
     
     var moreImageURLs: [NSURL] = [
-        NSURL(string: "http://media-cdn.tripadvisor.com/media/photo-s/02/c4/72/96/new-peking-duck-chinese.jpg")!,
-        NSURL(string: "https://lh5.googleusercontent.com/-coA3W-VOtGw/UhgHZBiMDwI/AAAAAAAAJDY/dBfDpKzytao/s408-k-no/")!
+        NSURL(string: "http://cdn.blessthisstuff.com/imagens/stuff/sushi-bazooka-5.jpg")!,
+        NSURL(string: "http://media-cdn.tripadvisor.com/media/photo-s/02/8f/2b/f1/feng-sushi-kensington.jpg")!,
+        NSURL(string: "http://www.21sushihouse.com/wp-content/uploads/2013/05/206804375_1d6e96d459_o.jpg")!,
+        NSURL(string: "http://www.modesushi.it/immagini/sushi-sashimi.jpg")!,
+        NSURL(string: "http://www.pbs.org/food/files/2012/09/Sushi-5-1.jpg")!,
+        NSURL(string: "http://www.pbs.org/food/files/2012/09/Sushi-1-1.jpg")!,
+        NSURL(string: "http://iwakirestaurant.com/wp-content/uploads/sushi-17.jpg")!,
     ]
     
     private func strToUrl(string string: String?) -> NSURL? {
