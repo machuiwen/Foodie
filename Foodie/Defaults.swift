@@ -6,6 +6,7 @@
 //  Copyright © 2015 Stanford University. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 // NSUserDefaults wrapper
@@ -17,7 +18,7 @@ class Defaults {
         if defaults.boolForKey(Constants.AppInitialized) == true {
             return
         }
-        // initialize app
+        // initialize app with restaurants
         if let context = AppDelegate.managedObjectContext {
             context.performBlock {
                 Restaurant.addRestaurant("Peking Duck Restaurant", type: "Chinese", description: "Traditional Chinese delicacy", openStatus: true, phoneNumber: 6504981388, formattedAddress: "151 California Ave, Palo Alto, CA 94306", priceLevel: 30, website: "http://www.yelp.com/biz/peking-duck-restaurant-palo-alto", rating: 3.9, imageURL: "http://media-cdn.tripadvisor.com/media/photo-s/02/c4/72/96/new-peking-duck-chinese.jpg", inManagedObjectContext: context)
@@ -32,6 +33,23 @@ class Defaults {
                 }
             }
         }
+        
+        // initialize notification
+        // http://stackoverflow.com/questions/31170112/notification-in-swift-every-day-at-a-set-time
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([NSCalendarUnit.Hour, NSCalendarUnit.Month, NSCalendarUnit.Year, NSCalendarUnit.Day], fromDate: NSDate())
+        components.hour = 18
+        components.minute = 0
+        components.second = 0
+        calendar.timeZone = NSTimeZone.localTimeZone()
+        let dayToFire = calendar.dateFromComponents(components)
+        let notification = UILocalNotification()
+        notification.timeZone = NSTimeZone.localTimeZone()
+        notification.fireDate = dayToFire
+        notification.alertBody = "Feel hungry? Find a restaurant!!"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
         defaults.setBool(true, forKey: Constants.AppInitialized)
     }
     
