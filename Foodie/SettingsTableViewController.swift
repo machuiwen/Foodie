@@ -70,7 +70,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return 6
-        case 1: return 1
+        case 1: return 2
         default: return 0
         }
     }

@@ -38,4 +38,15 @@ class User: NSManagedObject {
         self.mutableSetValueForKey("favorites").removeObject(value)
     }
     
+    var audioNotePath: NSURL? {
+        return strToUrl(string: audioNotePathStr)
+    }
+    
+    private func strToUrl(string string: String?) -> NSURL? {
+        if let url = string {
+            return NSURL(string: url)
+        }
+        return nil
+    }
+    
 }

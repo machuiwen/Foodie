@@ -16,6 +16,7 @@
     </entity>
     <entity name="User" representedClassName=".User" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="audioNotePathStr" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,7 +28,7 @@
         <relationship name="favorites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Restaurant" inverseName="liked" inverseEntity="Restaurant" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="208"/>
         <element name="Restaurant" positionX="171" positionY="-30" width="128" height="223"/>
     </elements>
 </model>

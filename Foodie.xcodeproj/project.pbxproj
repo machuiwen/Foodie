@@ -39,6 +39,7 @@
 		5DBB8E651C1782F300970B52 /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB8E641C1782F300970B52 /* Restaurant+CoreDataProperties.swift */; };
 		5DBB8E671C17834100970B52 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB8E661C17834100970B52 /* Restaurant.swift */; };
 		5DBB8E691C179E6B00970B52 /* FavoriteRestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB8E681C179E6B00970B52 /* FavoriteRestaurantTableViewController.swift */; };
+		5DBB8E6B1C17C6CE00970B52 /* AudioNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB8E6A1C17C6CE00970B52 /* AudioNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		5DBB8E641C1782F300970B52 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5DBB8E661C17834100970B52 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		5DBB8E681C179E6B00970B52 /* FavoriteRestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurantTableViewController.swift; sourceTree = "<group>"; };
+		5DBB8E6A1C17C6CE00970B52 /* AudioNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		5D7957D61C16E5BA006315B8 /* Settings Tab */ = {
 			isa = PBXGroup;
 			children = (
+				5DBB8E6A1C17C6CE00970B52 /* AudioNoteViewController.swift */,
 				5D18D53F1C16128E00E6D74A /* SettingsTableViewController.swift */,
 				5DB887451C166437000C4212 /* EditUserInfoTableViewController.swift */,
 				5D6663E61C16B3520022ACE8 /* UserImageViewController.swift */,
@@ -274,6 +277,7 @@
 				5D18D5461C16296800E6D74A /* Defaults.swift in Sources */,
 				5D18D5401C16128E00E6D74A /* SettingsTableViewController.swift in Sources */,
 				5DBB8E691C179E6B00970B52 /* FavoriteRestaurantTableViewController.swift in Sources */,
+				5DBB8E6B1C17C6CE00970B52 /* AudioNoteViewController.swift in Sources */,
 				5DBB8E671C17834100970B52 /* Restaurant.swift in Sources */,
 				5D9BD2A41C13CDF50058C655 /* MapViewController.swift in Sources */,
 				5D18D53E1C160A4E00E6D74A /* LogInViewController.swift in Sources */,

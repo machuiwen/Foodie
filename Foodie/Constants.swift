@@ -22,6 +22,8 @@ struct Constants {
     static let AppInitialized = "Innitialized"
     static let RestaurantCell = "RestaurantCell"
     static let FavoriteRestaurantCell = "FavoriteRestaurantCell"
+    static let AudioSuffix = ".wav"
+    static let AudioDefaultPrefix = "my_audio"
     
     enum UserInfoType {
         case FirstName

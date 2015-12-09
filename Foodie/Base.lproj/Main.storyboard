@@ -704,7 +704,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="2ue-95-Ydw">
-                            <rect key="frame" x="0.0" y="517" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="561" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jY-Lz-hh6">
@@ -912,6 +912,26 @@
                                             <segue destination="933-B8-GTk" kind="show" identifier="Edit Note" id="2W4-hb-lcp"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="T9j-DS-jc6" style="IBUITableViewCellStyleDefault" id="AXH-2c-6Ci">
+                                        <rect key="frame" x="0.0" y="499" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AXH-2c-6Ci" id="fa8-oJ-bOn">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Audio Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T9j-DS-jc6">
+                                                    <rect key="frame" x="15" y="0.0" width="550" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="cgr-I8-UNj" kind="show" identifier="Record Audio" id="CfB-nq-lsV"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -928,6 +948,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGa-op-bPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1655" y="3568"/>
+        </scene>
+        <!--Audio Note View Controller-->
+        <scene sceneID="ZYL-TX-oGs">
+            <objects>
+                <viewController id="cgr-I8-UNj" customClass="AudioNoteViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RRY-xa-EBR"/>
+                        <viewControllerLayoutGuide type="bottom" id="ERs-1n-tvg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cnV-Fw-HJH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ju5-Tz-CAR">
+                                <rect key="frame" x="236" y="211" width="128" height="128"/>
+                                <state key="normal" image="mic"/>
+                                <connections>
+                                    <action selector="startRecording:" destination="cgr-I8-UNj" eventType="touchUpInside" id="Eh8-mw-3nG"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjJ-RZ-HpY">
+                                <rect key="frame" x="263" y="357" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdQ-JU-SzS">
+                                <rect key="frame" x="268" y="399" width="64" height="64"/>
+                                <state key="normal" image="stop"/>
+                                <connections>
+                                    <action selector="stopRecording:" destination="cgr-I8-UNj" eventType="touchUpInside" id="LYh-fB-oZy"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySe-oo-EdA">
+                                <rect key="frame" x="268" y="399" width="64" height="64"/>
+                                <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="playSound:" destination="cgr-I8-UNj" eventType="touchUpInside" id="z4B-mJ-mlT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ju5-Tz-CAR" firstAttribute="centerX" secondItem="cnV-Fw-HJH" secondAttribute="centerX" id="7rY-C9-b9v"/>
+                            <constraint firstItem="pjJ-RZ-HpY" firstAttribute="centerX" secondItem="cnV-Fw-HJH" secondAttribute="centerX" id="Bhu-n8-EsT"/>
+                            <constraint firstItem="tdQ-JU-SzS" firstAttribute="centerX" secondItem="cnV-Fw-HJH" secondAttribute="centerX" id="G6E-5q-hk7"/>
+                            <constraint firstItem="ySe-oo-EdA" firstAttribute="centerX" secondItem="cnV-Fw-HJH" secondAttribute="centerX" id="PLp-YG-1ON"/>
+                            <constraint firstItem="ERs-1n-tvg" firstAttribute="top" secondItem="tdQ-JU-SzS" secondAttribute="bottom" constant="88" id="RX1-fi-dQG"/>
+                            <constraint firstItem="Ju5-Tz-CAR" firstAttribute="top" secondItem="RRY-xa-EBR" secondAttribute="bottom" constant="147" id="qRo-iu-r79"/>
+                            <constraint firstItem="pjJ-RZ-HpY" firstAttribute="top" secondItem="Ju5-Tz-CAR" secondAttribute="bottom" constant="18" id="v6W-oX-3Hd"/>
+                            <constraint firstItem="ERs-1n-tvg" firstAttribute="top" secondItem="ySe-oo-EdA" secondAttribute="bottom" constant="88" id="wQD-R5-Gvf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="ySe-oo-EdA" id="7wo-9U-vFk"/>
+                        <outlet property="recordButton" destination="Ju5-Tz-CAR" id="n0v-Pb-81V"/>
+                        <outlet property="recordingLabel" destination="pjJ-RZ-HpY" id="7R9-dA-tDN"/>
+                        <outlet property="stopButton" destination="tdQ-JU-SzS" id="6XB-Vd-gOA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="30I-63-jmz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2054" y="4560"/>
         </scene>
         <!--Edit User Info Table View Controller-->
         <scene sceneID="KtL-VR-xAd">
@@ -1229,13 +1312,16 @@
         <image name="defaultprofile" width="128" height="128"/>
         <image name="launch" width="422" height="750"/>
         <image name="me" width="32" height="32"/>
+        <image name="mic" width="128" height="128"/>
+        <image name="play" width="64" height="64"/>
         <image name="restaurant" width="32" height="32"/>
         <image name="share" width="32" height="32"/>
         <image name="star" width="32" height="32"/>
+        <image name="stop" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c63-oB-HNZ"/>
         <segue reference="jg4-Zb-5pA"/>
-        <segue reference="w1J-tJ-0XJ"/>
+        <segue reference="74z-kg-7UK"/>
     </inferredMetricsTieBreakers>
 </document>

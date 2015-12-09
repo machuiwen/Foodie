@@ -23,6 +23,7 @@ extension User {
     @NSManaged var lastname: String?
     @NSManaged var myWord: String?
     @NSManaged var password: String?
+    @NSManaged var audioNotePathStr: String?
     @NSManaged var favorites: NSSet?
 
 }
