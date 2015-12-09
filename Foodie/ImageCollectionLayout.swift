@@ -9,7 +9,6 @@
 import UIKit
 
 class ImageCollectionLayout: UICollectionViewLayout {
-    // TODO: Modify code here
     
     var delegate: ImageCollectionLayoutDelegate!
     var numberOfColumns = 2
@@ -23,8 +22,9 @@ class ImageCollectionLayout: UICollectionViewLayout {
         return CGRectGetWidth(collectionView!.bounds) - (insets.left + insets.right)
     }
     
+    // code adapted from section 4
     override func prepareLayout() {
-        if cache.isEmpty && collectionView!.numberOfSections() != 0{
+        if cache.isEmpty && collectionView!.numberOfSections() != 0 {
             let columnWidth = contentWidth / CGFloat(numberOfColumns)
             var xOffset = [CGFloat]()
             for column in 0 ..< numberOfColumns {

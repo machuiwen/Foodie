@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 
 class MapPin: NSObject, MKAnnotation {
+    
     var coordinate: CLLocationCoordinate2D
     var title: String?
     var subtitle: String?
