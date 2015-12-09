@@ -109,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				5D0383421C138A8A009D4FF0 /* Main.storyboard */,
-				5DBB8E681C179E6B00970B52 /* FavoriteRestaurantTableViewController.swift */,
 				5D0383551C138D43009D4FF0 /* RestaurantsTableViewController.swift */,
 				5D03835B1C1394EB009D4FF0 /* RestaurantInfoTableViewController.swift */,
 				5D03835D1C139557009D4FF0 /* ProfileImageTableViewCell.swift */,
@@ -119,6 +118,7 @@
 				5D9BD2A11C13C54C0058C655 /* MapPin.swift */,
 				5D0383671C13AACF009D4FF0 /* ImageCollectionLayout.swift */,
 				5D0383611C139C38009D4FF0 /* ImageCollectionViewController.swift */,
+				5DBB8E681C179E6B00970B52 /* FavoriteRestaurantTableViewController.swift */,
 				5D7957D71C1748D0006315B8 /* RestaurantsTableHeaderView.swift */,
 				5D0383631C139CB3009D4FF0 /* ImageCollectionViewCell.swift */,
 				5D0383651C13A665009D4FF0 /* RestaurantImageViewController.swift */,
