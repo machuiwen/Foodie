@@ -17,6 +17,22 @@ class FavoriteRestaurantTableViewController: UITableViewController {
     private var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
     private var defaults = Defaults()
     
+    // MARK: - Action
+    
+    // http://www.ioscreator.com/tutorials/airprint-tutorial-ios8-swift
+    @IBAction func printList(sender: UIBarButtonItem) {
+        let printController = UIPrintInteractionController.sharedPrintController()
+        let printInfo = UIPrintInfo(dictionary:nil)
+        printInfo.outputType = UIPrintInfoOutputType.General
+        printInfo.jobName = Constants.PrintJobName
+        printController.printInfo = printInfo
+        let printContent = getPrintContent()
+        let formatter = UIMarkupTextPrintFormatter(markupText: printContent)
+        formatter.contentInsets = UIEdgeInsets(top: 72, left: 72, bottom: 72, right: 72)
+        printController.printFormatter = formatter
+        printController.presentAnimated(true, completionHandler: nil)
+    }
+    
     // MARK: - ViewController Lifecycle
     
     override func viewWillAppear(animated: Bool) {
@@ -73,6 +89,26 @@ class FavoriteRestaurantTableViewController: UITableViewController {
                 }
             }
         }
+    }
+    
+    private func getPrintContent() -> String {
+        var content: String = "Favorite Restaurants. "
+        for r in restaurants {
+            if let name = r.name {
+                content += name + Constants.Comma
+            }
+            if let type = r.type {
+                content += type + Constants.Comma
+            }
+            if let phoneNumber = r.phoneNumberStr {
+                content += phoneNumber + Constants.Comma
+            }
+            if let address = r.formattedAddress {
+                content += address + Constants.Comma
+            }
+            content += Constants.Splitter
+        }
+        return content
     }
     
     // MARK: - Navigation

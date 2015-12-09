@@ -19,11 +19,16 @@ struct Constants {
     static let PopViewControllerSegue = "Pop VC"
     static let GoogleSearchRequestPrefix = "https://www.google.com/search?q="
     static let EmptyStr = ""
+    static let Space = " "
+    static let Comma = ","
+    static let Period = "."
+    static let Splitter = "   |   "
     static let AppInitialized = "Innitialized"
     static let RestaurantCell = "RestaurantCell"
     static let FavoriteRestaurantCell = "FavoriteRestaurantCell"
     static let AudioSuffix = ".wav"
     static let AudioDefaultPrefix = "my_audio"
+    static let PrintJobName = "Foodie Print Job"
     
     enum UserInfoType {
         case FirstName
