@@ -540,7 +540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7CK-RC-JAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2977" y="723"/>
+            <point key="canvasLocation" x="2571" y="777"/>
         </scene>
         <!--Restaurant Image View Controller-->
         <scene sceneID="CCP-Ou-g06">
@@ -1250,6 +1250,7 @@
                             <outlet property="delegate" destination="GZC-h5-YE6" id="zAu-cy-bOi"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="wqU-du-0gQ">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="v8X-OL-5Ee">
@@ -1263,12 +1264,21 @@
                                 <action selector="sort:" destination="GZC-h5-YE6" eventType="valueChanged" id="RcB-Ly-taP"/>
                             </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" title="Print" id="ZO4-uD-7zW">
-                            <connections>
-                                <action selector="printList:" destination="GZC-h5-YE6" id="a0N-dY-Ipo"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="print" id="ZO4-uD-7zW">
+                                <connections>
+                                    <action selector="printList:" destination="GZC-h5-YE6" id="a0N-dY-Ipo"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="map" id="Ui8-tg-KgI">
+                                <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-30" maxY="0.0"/>
+                                <connections>
+                                    <segue destination="v0F-OI-91O" kind="show" identifier="Show Favorite Restaurants" id="9bV-Qv-70C"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="segmentedControl" destination="v8X-OL-5Ee" id="okU-sL-1d8"/>
                     </connections>
@@ -1319,16 +1329,19 @@
     <resources>
         <image name="defaultprofile" width="128" height="128"/>
         <image name="launch" width="422" height="750"/>
+        <image name="map" width="22" height="22"/>
         <image name="me" width="32" height="32"/>
         <image name="mic" width="128" height="128"/>
         <image name="play" width="64" height="64"/>
+        <image name="print" width="22" height="22"/>
         <image name="restaurant" width="32" height="32"/>
         <image name="star" width="32" height="32"/>
         <image name="stop" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c63-oB-HNZ"/>
-        <segue reference="jg4-Zb-5pA"/>
         <segue reference="74z-kg-7UK"/>
+        <segue reference="jg4-Zb-5pA"/>
+        <segue reference="9bV-Qv-70C"/>
     </inferredMetricsTieBreakers>
 </document>

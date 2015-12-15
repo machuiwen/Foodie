@@ -148,6 +148,12 @@ class FavoriteRestaurantTableViewController: UITableViewController {
                     rivc.restaurant = Restaurant.queryRestaurant(rname, inManagedObjectContext: context)
                 }
             }
+        } else if let mapvc = destinationvc as? MapViewController {
+            var locations = [String]()
+            for r in restaurants where r.formattedAddress != nil {
+                locations.append(r.formattedAddress!)
+            }
+            mapvc.locations = locations
         }
     }
     

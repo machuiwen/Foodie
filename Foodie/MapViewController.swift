@@ -32,7 +32,7 @@ class MapViewController: UIViewController {
         for address in locations {
             let request = MKLocalSearchRequest()
             request.naturalLanguageQuery = address
-            // BUG: request.region = mapView.region
+            // request.region = self.mapView.region
             let search = MKLocalSearch(request: request)
             search.startWithCompletionHandler {
                 [ weak weakSelf = self ] (response, error) -> Void in
