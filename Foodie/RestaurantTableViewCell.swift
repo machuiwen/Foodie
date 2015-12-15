@@ -35,8 +35,8 @@ class RestaurantTableViewCell: UITableViewCell {
             restaurantNameLabel?.text = restaurant?.name
             restaurantTypeLabel?.text = restaurant?.type
             restaurantPriceLabel?.text = restaurant?.price
-            if let rating = restaurant?.rating {
-                restaurantRatingLabel?.text = "Rating: " + String(rating)
+            if let rating = restaurant?.ratingStr {
+                restaurantRatingLabel?.text = "Rating: " + rating
             }
             restaurantNumOfReviewsLabel?.text = String(restaurant?.liked?.count ?? 0) + " Reviews"
             myImage = nil

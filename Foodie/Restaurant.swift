@@ -75,6 +75,14 @@ class Restaurant: NSManagedObject {
         return nil
     }
     
+    var ratingStr: String {
+        if let r = rating {
+            return String(r.doubleValue)
+        } else {
+            return "None"
+        }
+    }
+    
     var moreImageURLs: [NSURL] = [
         NSURL(string: "http://cdn.blessthisstuff.com/imagens/stuff/sushi-bazooka-5.jpg")!,
         NSURL(string: "http://media-cdn.tripadvisor.com/media/photo-s/02/8f/2b/f1/feng-sushi-kensington.jpg")!,

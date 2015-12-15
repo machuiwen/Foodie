@@ -11,6 +11,10 @@ import CoreData
 
 class FavoriteRestaurantTableViewController: UITableViewController {
     
+    // MARK: - Outlet
+    
+    @IBOutlet private weak var segmentedControl: UISegmentedControl!
+    
     // MARK: - Propertities
     
     private var restaurants = [Restaurant]()
@@ -20,7 +24,7 @@ class FavoriteRestaurantTableViewController: UITableViewController {
     // MARK: - Action
     
     // http://www.ioscreator.com/tutorials/airprint-tutorial-ios8-swift
-    @IBAction func printList(sender: UIBarButtonItem) {
+    @IBAction private func printList(sender: UIBarButtonItem) {
         let printController = UIPrintInteractionController.sharedPrintController()
         let printInfo = UIPrintInfo(dictionary:nil)
         printInfo.outputType = UIPrintInfoOutputType.General
@@ -33,14 +37,32 @@ class FavoriteRestaurantTableViewController: UITableViewController {
         printController.presentAnimated(true, completionHandler: nil)
     }
     
+    @IBAction private func sort(sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            restaurants.sortInPlace({ $0.name < $1.name })
+            tableView.reloadData()
+        case 1:
+            restaurants.sortInPlace({ $0.rating?.doubleValue > $1.rating?.doubleValue })
+            tableView.reloadData()
+        default:
+            break
+        }
+    }
+    
     // MARK: - ViewController Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let context = managedObjectContext, uid = defaults.currentUser {
             if let user = User.queryUsers(uid, inManagedObjectContext: context).first {
                 restaurants = (user.favorites?.allObjects as? [Restaurant]) ?? []
-                tableView.reloadData()
+                sort(segmentedControl)
             }
         }
     }
@@ -58,6 +80,7 @@ class FavoriteRestaurantTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.FavoriteRestaurantCell, forIndexPath: indexPath)
         cell.textLabel?.text = restaurants[indexPath.row].name
+        cell.detailTextLabel?.text = restaurants[indexPath.row].ratingStr
         return cell
     }
     
