@@ -540,7 +540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7CK-RC-JAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2571" y="777"/>
+            <point key="canvasLocation" x="2481" y="743"/>
         </scene>
         <!--Restaurant Image View Controller-->
         <scene sceneID="CCP-Ou-g06">
@@ -848,15 +848,15 @@
                                             <segue destination="933-B8-GTk" kind="show" identifier="Edit Email" id="74z-kg-7UK"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="YM6-9F-Wew" style="IBUITableViewCellStyleDefault" id="4Cd-1d-WS4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" textLabel="YM6-9F-Wew" style="IBUITableViewCellStyleDefault" id="4Cd-1d-WS4">
                                         <rect key="frame" x="0.0" y="375" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Cd-1d-WS4" id="SY2-Od-RIU">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="533" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YM6-9F-Wew">
-                                                    <rect key="frame" x="15" y="0.0" width="550" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="518" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -865,7 +865,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="933-B8-GTk" kind="show" identifier="Edit Address" id="w1J-tJ-0XJ"/>
+                                            <segue destination="v0F-OI-91O" kind="show" identifier="Show User Address" trigger="accessoryAction" id="6hW-zd-sDc"/>
+                                            <segue destination="933-B8-GTk" kind="show" identifier="Edit Address" id="NFX-fu-cAX"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1340,8 +1341,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c63-oB-HNZ"/>
-        <segue reference="74z-kg-7UK"/>
+        <segue reference="6hW-zd-sDc"/>
+        <segue reference="NFX-fu-cAX"/>
         <segue reference="jg4-Zb-5pA"/>
-        <segue reference="9bV-Qv-70C"/>
     </inferredMetricsTieBreakers>
 </document>

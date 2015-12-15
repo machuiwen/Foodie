@@ -217,6 +217,12 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
             }
         } else if let uivc = destinationvc as? UserImageViewController {
             uivc.image = profileImage.imageView?.image
+        } else if let mapvc = destinationvc as? MapViewController {
+            if let uid = userid, context = managedObjectContext {
+                if let addr = User.queryUsers(uid, inManagedObjectContext: context).first?.address {
+                    mapvc.locations = [addr]
+                }
+            }
         }
     }
     
