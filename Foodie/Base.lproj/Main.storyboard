@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
@@ -375,6 +376,7 @@
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="star" id="DVU-c4-qRa">
+                                <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-30" maxY="0.0"/>
                                 <connections>
                                     <action selector="addToFavorite:" destination="wSG-40-M75" id="oT6-l5-5oc"/>
                                 </connections>
@@ -523,7 +525,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="miG-qp-0aO">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -668,6 +670,7 @@
                     <connections>
                         <segue destination="zdT-sB-obs" kind="relationship" relationship="viewControllers" id="812-VI-LLu"/>
                         <segue destination="0Vy-Tk-bGt" kind="relationship" relationship="viewControllers" id="dq6-m0-s9z"/>
+                        <segue destination="ZFj-VA-VJ8" kind="relationship" relationship="viewControllers" id="FY7-TE-drx"/>
                         <segue destination="y67-w6-UgG" kind="relationship" relationship="viewControllers" id="WDr-Lc-GYR"/>
                     </connections>
                 </tabBarController>
@@ -928,7 +931,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGa-op-bPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1622" y="1936"/>
+            <point key="canvasLocation" x="1626" y="4480"/>
         </scene>
         <!--Audio Note View Controller-->
         <scene sceneID="ZYL-TX-oGs">
@@ -991,7 +994,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30I-63-jmz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2481" y="2868"/>
+            <point key="canvasLocation" x="2485" y="5412"/>
         </scene>
         <!--Edit User Info Table View Controller-->
         <scene sceneID="KtL-VR-xAd">
@@ -1053,7 +1056,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZs-Re-Cfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Oqg-i4-AAn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2481" y="2078"/>
+            <point key="canvasLocation" x="2485" y="4622"/>
         </scene>
         <!--User Image View Controller-->
         <scene sceneID="Jp8-Zj-xLR">
@@ -1095,7 +1098,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2481" y="1398"/>
+            <point key="canvasLocation" x="2485" y="3942"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="tsV-su-0z3">
@@ -1305,7 +1308,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="imE-XX-gCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="865" y="1936"/>
+            <point key="canvasLocation" x="869" y="4480"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l2Y-yw-nON">
@@ -1326,23 +1329,99 @@
             </objects>
             <point key="canvasLocation" x="865" y="760"/>
         </scene>
+        <!--Friends-->
+        <scene sceneID="pve-wA-P7C">
+            <objects>
+                <tableViewController id="7vx-AE-5Nm" customClass="FriendsTableViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="a4O-9G-Cfb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="60" id="orw-qn-TLc" customClass="FriendTableViewCell" customModule="Foodie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="114" width="600" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="orw-qn-TLc" id="rBd-v6-Vf8">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultprofile" translatesAutoresizingMaskIntoConstraints="NO" id="i0c-np-0Xh">
+                                            <rect key="frame" x="8" y="8" width="43" height="43"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="i0c-np-0Xh" secondAttribute="height" multiplier="1:1" id="Rlc-lY-gXw"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpe-ee-elp">
+                                            <rect key="frame" x="59" y="19" width="45" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="zpe-ee-elp" firstAttribute="leading" secondItem="i0c-np-0Xh" secondAttribute="trailing" constant="8" id="BlC-26-Bto"/>
+                                        <constraint firstItem="i0c-np-0Xh" firstAttribute="leading" secondItem="rBd-v6-Vf8" secondAttribute="leadingMargin" id="D5Z-kB-5sa"/>
+                                        <constraint firstItem="i0c-np-0Xh" firstAttribute="top" secondItem="rBd-v6-Vf8" secondAttribute="topMargin" id="F7g-as-Gu4"/>
+                                        <constraint firstItem="i0c-np-0Xh" firstAttribute="bottom" secondItem="rBd-v6-Vf8" secondAttribute="bottomMargin" id="WuW-6e-NdQ"/>
+                                        <constraint firstItem="zpe-ee-elp" firstAttribute="centerY" secondItem="rBd-v6-Vf8" secondAttribute="centerY" id="xmO-Ia-aJA"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="zpe-ee-elp" id="ERK-pV-q5d"/>
+                                    <outlet property="profileImageView" destination="i0c-np-0Xh" id="vpv-XI-yHT"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7vx-AE-5Nm" id="gqM-vf-YSd"/>
+                            <outlet property="delegate" destination="7vx-AE-5Nm" id="OVI-Dk-CUQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Friends" id="2HP-vi-SsV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hpC-lp-OOl"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="glC-AF-dBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1677" y="1632"/>
+        </scene>
+        <!--Friends-->
+        <scene sceneID="TV6-Fn-qH7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZFj-VA-VJ8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friends" image="contacts" id="L1r-aB-J41"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cH7-64-NAS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7vx-AE-5Nm" kind="relationship" relationship="rootViewController" id="cLm-6b-440"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ufu-3M-2dC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="865" y="1632"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="contacts" width="25" height="25"/>
         <image name="defaultprofile" width="128" height="128"/>
         <image name="launch" width="422" height="750"/>
         <image name="map" width="22" height="22"/>
-        <image name="me" width="32" height="32"/>
+        <image name="me" width="25" height="25"/>
         <image name="mic" width="128" height="128"/>
         <image name="play" width="64" height="64"/>
         <image name="print" width="22" height="22"/>
-        <image name="restaurant" width="32" height="32"/>
+        <image name="restaurant" width="25" height="25"/>
         <image name="star" width="32" height="32"/>
         <image name="stop" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c63-oB-HNZ"/>
-        <segue reference="6hW-zd-sDc"/>
-        <segue reference="NFX-fu-cAX"/>
         <segue reference="jg4-Zb-5pA"/>
+        <segue reference="9bV-Qv-70C"/>
+        <segue reference="74z-kg-7UK"/>
     </inferredMetricsTieBreakers>
 </document>

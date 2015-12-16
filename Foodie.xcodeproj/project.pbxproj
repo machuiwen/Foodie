@@ -35,6 +35,8 @@
 		5D9BD2A91C141EEF0058C655 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A71C141EEF0058C655 /* User+CoreDataProperties.swift */; };
 		5D9BD2AA1C141EEF0058C655 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2A81C141EEF0058C655 /* User.swift */; };
 		5D9BD2AD1C14FC7C0058C655 /* Foodie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BD2AB1C14FC7C0058C655 /* Foodie.xcdatamodeld */; };
+		5DB363E91C214CD100826B8A /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB363E81C214CD100826B8A /* FriendsTableViewController.swift */; };
+		5DB363EB1C21526F00826B8A /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB363EA1C21526F00826B8A /* FriendTableViewCell.swift */; };
 		5DB887461C166437000C4212 /* EditUserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB887451C166437000C4212 /* EditUserInfoTableViewController.swift */; };
 		5DBB8E651C1782F300970B52 /* Restaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB8E641C1782F300970B52 /* Restaurant+CoreDataProperties.swift */; };
 		5DBB8E671C17834100970B52 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB8E661C17834100970B52 /* Restaurant.swift */; };
@@ -73,6 +75,8 @@
 		5D9BD2A71C141EEF0058C655 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5D9BD2A81C141EEF0058C655 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5D9BD2AC1C14FC7C0058C655 /* Foodie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodie.xcdatamodel; sourceTree = "<group>"; };
+		5DB363E81C214CD100826B8A /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		5DB363EA1C21526F00826B8A /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		5DB887451C166437000C4212 /* EditUserInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserInfoTableViewController.swift; sourceTree = "<group>"; };
 		5DBB8E641C1782F300970B52 /* Restaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Restaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5DBB8E661C17834100970B52 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				5D0383421C138A8A009D4FF0 /* Main.storyboard */,
+				5DB363EA1C21526F00826B8A /* FriendTableViewCell.swift */,
+				5DB363E81C214CD100826B8A /* FriendsTableViewController.swift */,
 				5D0383551C138D43009D4FF0 /* RestaurantsTableViewController.swift */,
 				5D03835B1C1394EB009D4FF0 /* RestaurantInfoTableViewController.swift */,
 				5D03835D1C139557009D4FF0 /* ProfileImageTableViewCell.swift */,
@@ -267,11 +273,13 @@
 				5D0383621C139C38009D4FF0 /* ImageCollectionViewController.swift in Sources */,
 				5D7BD4811C13B508007BBCBD /* MapTableViewCell.swift in Sources */,
 				5D03833F1C138A8A009D4FF0 /* AppDelegate.swift in Sources */,
+				5DB363EB1C21526F00826B8A /* FriendTableViewCell.swift in Sources */,
 				5D9BD2A61C1409600058C655 /* SignUpViewController.swift in Sources */,
 				5D9BD2A91C141EEF0058C655 /* User+CoreDataProperties.swift in Sources */,
 				5DBB8E651C1782F300970B52 /* Restaurant+CoreDataProperties.swift in Sources */,
 				5D9BD2AA1C141EEF0058C655 /* User.swift in Sources */,
 				5D0383661C13A665009D4FF0 /* RestaurantImageViewController.swift in Sources */,
+				5DB363E91C214CD100826B8A /* FriendsTableViewController.swift in Sources */,
 				5D18D5421C16210000E6D74A /* LandingPageViewController.swift in Sources */,
 				5D6663E71C16B3520022ACE8 /* UserImageViewController.swift in Sources */,
 				5D18D5461C16296800E6D74A /* Defaults.swift in Sources */,
